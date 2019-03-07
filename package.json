@@ -1,0 +1,19 @@
+{
+  "name": "save4thpillar",
+  "version": "1.0.0",
+  "description": "A voting platform for News Channels, Journalist, Anchors etc. Build with MERN stack.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaheemTech/save4thpillar.git"
+  },
+  "author": "Faheem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaheemTech/save4thpillar/issues"
+  },
+  "homepage": "https://github.com/FaheemTech/save4thpillar#readme"
+}
