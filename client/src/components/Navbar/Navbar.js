@@ -12,6 +12,11 @@ import {
 } from "reactstrap";
 
 import About from "../About/About";
+import TopList from "../TopList/TopList";
+import ContactUs from "../ContactUs/ContactUs";
+import Search from "../Search/Search";
+import Login from "../LogIn/LogIn";
+
 import "./Navbar.css";
 
 class AppNavbar extends Component {
@@ -98,10 +103,10 @@ class AppNavbar extends Component {
 
         <Switch>
           <Route path="/about" component={About} />
-          <Route path="/about/" component={About} />
-          <Route path="/about/" component={About} />
-          <Route path="/about/" component={About} />
-          <Route path="/about/" component={About} />
+          <Route path="/top-list" component={TopList} />
+          <Route path="/contact-us" component={ContactUs} />
+          <Route path="/search" component={Search} />
+          <Route path="/login" component={Login} />
         </Switch>
       </div>
     );
