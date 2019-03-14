@@ -26,7 +26,12 @@ class AppNavbar extends Component {
   render() {
     return (
       <div>
-        <Navbar expand="md" light className="mb-5">
+        <Navbar
+          expand="md"
+          light
+          className="mb-5"
+          style={{ lineHeight: "2rem" }}
+        >
           <Container>
             <NavbarBrand className="text-danger text-bolder" href="/">
               save4thpillar
@@ -59,6 +64,15 @@ class AppNavbar extends Component {
                     onClick={this.toggle}
                   >
                     <span className="hoverp">Contact us</span>
+                  </NavLink>
+                </NavItem>
+                <NavItem className="mr-3">
+                  <NavLink
+                    className="text-dark"
+                    href="#hideandseek2"
+                    onClick={this.toggle}
+                  >
+                    <span className="hoverp">Search</span>
                   </NavLink>
                 </NavItem>
                 <NavItem className="mr-3">
