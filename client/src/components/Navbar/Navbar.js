@@ -84,7 +84,11 @@ class AppNavbar extends Component {
                     onClick={this.toggle}
                     style={{ textDecoration: "none" }}
                   >
-                    <span className="align-middle hoverp">Search</span>
+                    {/* <span className="align-middle hoverp">Search</span> */}
+                    <i
+                      className="fa fa-search align-middle hoverp searchicon"
+                      aria-hidden="true"
+                    />
                   </NavLink>
                 </NavItem>
                 <NavItem className="mr-3">

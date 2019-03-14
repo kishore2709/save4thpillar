@@ -1,3 +1,6 @@
 .hoverp:hover {
   color: #ec2c22 !important;
 }
+.searchicon {
+  -webkit-text-stroke: 0.5px #f8f9fa !important;
+}
