@@ -10,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <hr style={{ marginTop: "-48px" }} />
         <h1>Hi There</h1>
       </div>
     );

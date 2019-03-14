@@ -23,29 +23,47 @@ class AppNavbar extends Component {
   render() {
     return (
       <div>
-        <Navbar expand="md" color="success" dark className="mb-5">
+        <Navbar expand="md" light className="mb-5">
           <Container>
-            <NavbarBrand href="/">save4thpillar</NavbarBrand>
+            <NavbarBrand className="text-danger text-bolder" href="/">
+              save4thpillar
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="#hideandseek" onClick={this.toggle}>
+                <NavItem className="mr-3">
+                  <NavLink
+                    className="text-dark"
+                    href="#hideandseek"
+                    onClick={this.toggle}
+                  >
                     About
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="#hideandseek" onClick={this.toggle}>
+                <NavItem className="mr-3">
+                  <NavLink
+                    className="text-dark"
+                    href="#hideandseek0"
+                    onClick={this.toggle}
+                  >
                     Top List
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="#hideandseek" onClick={this.toggle}>
+                <NavItem className="mr-3">
+                  <NavLink
+                    className="text-dark"
+                    href="#hideandseek1"
+                    onClick={this.toggle}
+                  >
                     Contact us
                   </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink href="#hideandseek" onClick={this.toggle}>
+                <NavItem className="mr-3">
+                  <NavLink
+                    className="text-dark"
+                    href="#hideandseek2"
+                    onClick={this.toggle}
+                  >
                     Log in
                   </NavLink>
                 </NavItem>
