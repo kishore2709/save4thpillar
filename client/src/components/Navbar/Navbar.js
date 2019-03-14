@@ -36,7 +36,7 @@ class AppNavbar extends Component {
           expand="md"
           light
           className="mb-5 bg-light"
-          style={{ lineHeight: "2rem" }}
+          style={{ lineHeight: "2.5rem" }}
         >
           <Container>
             <NavbarBrand className="text-danger text-bolder" href="/">
@@ -48,7 +48,7 @@ class AppNavbar extends Component {
                 <NavItem className="mr-3">
                   <NavLink
                     to="/about"
-                    className="text-dark mr-3"
+                    className="text-dark mr-3 "
                     onClick={this.toggle}
                     style={{ textDecoration: "none" }}
                   >
@@ -100,7 +100,6 @@ class AppNavbar extends Component {
             </Collapse>
           </Container>
         </Navbar>
-
         <Switch>
           <Route path="/about" component={About} />
           <Route path="/top-list" component={TopList} />
