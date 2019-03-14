@@ -52,6 +52,16 @@ class Landing extends Component {
                 <span className="text-danger">News Anchors</span>
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.state.activeTab === "3" })}
+                onClick={() => {
+                  this.toggle("3");
+                }}
+              >
+                <span className="text-danger">Journalists/Reporters</span>
+              </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
             <TabPane tabId="1">
@@ -136,6 +146,52 @@ class Landing extends Component {
                         <th scope="row">3</th>
                         <td>Arnab Goswami</td>
                         <td> -10/10</td>
+                        <td>read more...</td>
+                        <td>
+                          <Button color="danger">Rate Now</Button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
+            </TabPane>
+            <TabPane tabId="3">
+              <Row>
+                <Col sm="12">
+                  <Table responsive>
+                    <thead>
+                      <tr>
+                        <th>Ranking</th>
+                        <th>Journalist/Reporter Name</th>
+                        <th>Current Rating</th>
+                        <th>Read Comments</th>
+                        <th>Rate this Journalist/Reporter</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Rajat Sharma </td>
+                        <td>7/10</td>
+                        <td>read more...</td>
+                        <td>
+                          <Button color="danger">Rate Now</Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Anjana</td>
+                        <td>3/10</td>
+                        <td>read more...</td>
+                        <td>
+                          <Button color="danger">Rate Now</Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Abhisar Sharma</td>
+                        <td>5/10</td>
                         <td>read more...</td>
                         <td>
                           <Button color="danger">Rate Now</Button>
