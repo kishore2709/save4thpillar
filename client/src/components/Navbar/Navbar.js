@@ -11,6 +11,7 @@ import {
   NavItem
 } from "reactstrap";
 
+import Landing from "../Landing/Landing";
 import About from "../About/About";
 import TopList from "../TopList/TopList";
 import ContactUs from "../ContactUs/ContactUs";
@@ -101,6 +102,7 @@ class AppNavbar extends Component {
           </Container>
         </Navbar>
         <Switch>
+          <Route path="/" exact component={Landing} />
           <Route path="/about" component={About} />
           <Route path="/top-list" component={TopList} />
           <Route path="/contact-us" component={ContactUs} />
