@@ -103,11 +103,11 @@ class AppNavbar extends Component {
         </Navbar>
         <Switch>
           <Route path="/" exact component={Landing} />
-          <Route path="/about" component={About} />
-          <Route path="/top-list" component={TopList} />
-          <Route path="/contact-us" component={ContactUs} />
-          <Route path="/search" component={Search} />
-          <Route path="/login" component={Login} />
+          <Route path="/about" exact component={About} />
+          <Route path="/top-list" exact component={TopList} />
+          <Route path="/contact-us" exact component={ContactUs} />
+          <Route path="/search" exact component={Search} />
+          <Route path="/login" exact component={Login} />
         </Switch>
       </div>
     );
