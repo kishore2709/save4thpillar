@@ -39,7 +39,7 @@ class Landing extends Component {
                   this.toggle("1");
                 }}
               >
-                News Channels
+                <span className="text-danger">News Channels</span>
               </NavLink>
             </NavItem>
             <NavItem>
@@ -49,7 +49,7 @@ class Landing extends Component {
                   this.toggle("2");
                 }}
               >
-                News Anchors
+                <span className="text-danger">News Anchors</span>
               </NavLink>
             </NavItem>
           </Nav>
