@@ -42,9 +42,10 @@ class AppNavbar extends Component {
               <Nav className="ml-auto" navbar>
                 <NavItem className="mr-3">
                   <NavLink
-                    to="/about/"
-                    className="text-dark"
+                    to="/about"
+                    className="text-dark mr-3"
                     onClick={this.toggle}
+                    style={{ textDecoration: "none" }}
                   >
                     <span className="align-middle hoverp">About</span>
                   </NavLink>
@@ -53,8 +54,9 @@ class AppNavbar extends Component {
                 <NavItem className="mr-3">
                   <NavLink
                     to="/top-list"
-                    className="text-dark"
+                    className="text-dark mr-3"
                     onClick={this.toggle}
+                    style={{ textDecoration: "none" }}
                   >
                     <span className="align-middle hoverp">Top List</span>
                   </NavLink>
@@ -62,8 +64,9 @@ class AppNavbar extends Component {
                 <NavItem className="mr-3">
                   <NavLink
                     to="contact-us"
-                    className="text-dark"
+                    className="text-dark mr-3"
                     onClick={this.toggle}
+                    style={{ textDecoration: "none" }}
                   >
                     <span className="align-middle hoverp">Contact us</span>
                   </NavLink>
@@ -71,8 +74,9 @@ class AppNavbar extends Component {
                 <NavItem className="mr-3">
                   <NavLink
                     to="search"
-                    className="text-dark"
+                    className="text-dark mr-3"
                     onClick={this.toggle}
+                    style={{ textDecoration: "none" }}
                   >
                     <span className="align-middle hoverp">Search</span>
                   </NavLink>
@@ -80,8 +84,9 @@ class AppNavbar extends Component {
                 <NavItem className="mr-3">
                   <NavLink
                     to="login"
-                    className="text-dark"
+                    className="text-dark mr-3"
                     onClick={this.toggle}
+                    style={{ textDecoration: "none" }}
                   >
                     <span className="align-middle hoverp">Log in</span>
                   </NavLink>
@@ -92,7 +97,7 @@ class AppNavbar extends Component {
         </Navbar>
 
         <Switch>
-          <Route path="/about/" component={About} />
+          <Route path="/about" component={About} />
           <Route path="/about/" component={About} />
           <Route path="/about/" component={About} />
           <Route path="/about/" component={About} />
