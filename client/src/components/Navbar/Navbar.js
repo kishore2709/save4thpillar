@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import {
   Collapse,
   Navbar,
@@ -9,6 +10,8 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
+
+import "./Navbar.css";
 
 class AppNavbar extends Component {
   state = {
@@ -37,7 +40,7 @@ class AppNavbar extends Component {
                     href="#hideandseek"
                     onClick={this.toggle}
                   >
-                    About
+                    <span className="hoverp">About</span>
                   </NavLink>
                 </NavItem>
                 <NavItem className="mr-3">
@@ -46,7 +49,7 @@ class AppNavbar extends Component {
                     href="#hideandseek0"
                     onClick={this.toggle}
                   >
-                    Top List
+                    <span className="hoverp">Top List</span>
                   </NavLink>
                 </NavItem>
                 <NavItem className="mr-3">
@@ -55,7 +58,7 @@ class AppNavbar extends Component {
                     href="#hideandseek1"
                     onClick={this.toggle}
                   >
-                    Contact us
+                    <span className="hoverp">Contact us</span>
                   </NavLink>
                 </NavItem>
                 <NavItem className="mr-3">
@@ -64,7 +67,7 @@ class AppNavbar extends Component {
                     href="#hideandseek2"
                     onClick={this.toggle}
                   >
-                    Log in
+                    <span className="hoverp">Log in</span>
                   </NavLink>
                 </NavItem>
               </Nav>
