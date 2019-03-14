@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const db = require("./config/keys").mongoURI;
 
 // DB connect
-// { useNewUrlParser: true } added so i can add '$' in my character
+// { useNewUrlParser: true } added so i can add '$' in my pass character
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => {
