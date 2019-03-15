@@ -1,0 +1,32 @@
+.searchbar {
+  margin-top: 18%;
+}
+
+form.searchbar input[type="text"] {
+  color: #363135;
+  padding: 30px;
+  font-size: 26px;
+  float: center;
+  width: 70%;
+  border: none transparent;
+
+  /* background: lightseagreen; */
+}
+
+form.searchbar button {
+  float: auto;
+  width: 15%;
+  padding: "22px 20px 22px 20px";
+  background: #ec2c22 !important;
+  color: white;
+  font-size: 18px;
+  border-left: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+form.searchbar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
