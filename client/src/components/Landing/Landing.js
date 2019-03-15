@@ -136,7 +136,9 @@ class Landing extends Component {
                         <td>8/10</td>
                         <td>read more...</td>
                         <td>
-                          <Button color="danger">Rate Now</Button>
+                          <Button color="danger" size="sm">
+                            Rate Now
+                          </Button>
                         </td>
                       </tr>
                       <tr>
@@ -145,7 +147,9 @@ class Landing extends Component {
                         <td>6/10</td>
                         <td>read more...</td>
                         <td>
-                          <Button color="danger">Rate Now</Button>
+                          <Button color="danger" size="sm">
+                            Rate Now
+                          </Button>
                         </td>
                       </tr>
                       <tr>
@@ -154,7 +158,9 @@ class Landing extends Component {
                         <td> -10/10</td>
                         <td>read more...</td>
                         <td>
-                          <Button color="danger">Rate Now</Button>
+                          <Button color="danger" size="sm">
+                            Rate Now
+                          </Button>
                         </td>
                       </tr>
                     </tbody>
@@ -182,7 +188,9 @@ class Landing extends Component {
                         <td>7/10</td>
                         <td>read more...</td>
                         <td>
-                          <Button color="danger">Rate Now</Button>
+                          <Button color="danger" size="sm">
+                            Rate Now
+                          </Button>
                         </td>
                       </tr>
                       <tr>
@@ -191,7 +199,9 @@ class Landing extends Component {
                         <td>3/10</td>
                         <td>read more...</td>
                         <td>
-                          <Button color="danger">Rate Now</Button>
+                          <Button color="danger" size="sm">
+                            Rate Now
+                          </Button>
                         </td>
                       </tr>
                       <tr>
@@ -200,7 +210,9 @@ class Landing extends Component {
                         <td>5/10</td>
                         <td>read more...</td>
                         <td>
-                          <Button color="danger">Rate Now</Button>
+                          <Button color="danger" size="sm">
+                            Rate Now
+                          </Button>
                         </td>
                       </tr>
                     </tbody>
