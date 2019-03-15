@@ -6,9 +6,7 @@ const login = () => {
     <div className="container loginContainer">
       <form action="">
         <div className="rowlog">
-          <h2 style={{ textAlign: "center" }}>
-            Login with Social Media or Manually
-          </h2>
+          <h2 className="loginhead">Login with Social Media or Manually</h2>
           <div className="vl">
             <span className="vl-innertext">or</span>
           </div>
@@ -16,10 +14,10 @@ const login = () => {
           <div className="collog ">
             <a
               href="/"
-              className="fb btnlog text-light"
-              style={{ background: "#3b5998" }}
+              className="google btnlog text-light"
+              style={{ background: "#dd4b39" }}
             >
-              <i className="fa fa-facebook fa-fw " /> Login with Facebook
+              <i className="fa fa-google fa-fw" /> Login with Google+
             </a>
             <a
               href="/"
@@ -28,12 +26,13 @@ const login = () => {
             >
               <i className="fa fa-twitter fa-fw" /> Login with Twitter
             </a>
+
             <a
               href="/"
-              className="google btnlog text-light"
-              style={{ background: "#dd4b39" }}
+              className="fb btnlog text-light"
+              style={{ background: "#3b5998" }}
             >
-              <i className="fa fa-google fa-fw" /> Login with Google+
+              <i className="fa fa-facebook fa-fw " /> Login with Facebook
             </a>
           </div>
 
