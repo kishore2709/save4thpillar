@@ -4,29 +4,44 @@
 
 form.searchbar input[type="text"] {
   color: #363135;
-  padding: 30px;
-  font-size: 26px;
+  padding: 10px;
+  font-size: 24px;
   float: center;
   width: 70%;
   border: none transparent;
-
-  /* background: lightseagreen; */
+  outline: none;
 }
 
 form.searchbar button {
   float: auto;
-  width: 15%;
+  width: 14%;
+  margin-left: 5px;
   padding: "22px 20px 22px 20px";
   background: #ec2c22 !important;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   border-left: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 38px;
 }
 
 form.searchbar::after {
   content: "";
   clear: both;
   display: table;
+}
+
+@media (max-width: 768px) {
+  form.searchbar input[type="text"] {
+    color: #363135;
+    padding: 5px;
+    font-size: 18px;
+    float: center;
+    width: 80%;
+    border: none transparent;
+    outline: none;
+  }
+  form.searchbar button {
+    font-size: 16px;
+  }
 }
