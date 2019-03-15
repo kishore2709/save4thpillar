@@ -1,5 +1,6 @@
 import React from "react";
 import "./LogIn.css";
+
 const login = () => {
   return (
     <div className="container loginContainer">
@@ -12,14 +13,26 @@ const login = () => {
             <span className="vl-innertext">or</span>
           </div>
 
-          <div className="collog">
-            <a href="/" className="fb btn">
-              <i className="fa fa-facebook fa-fw" /> Login with Facebook
+          <div className="collog ">
+            <a
+              href="/"
+              className="fb btnlog text-light"
+              style={{ background: "#3b5998" }}
+            >
+              <i className="fa fa-facebook fa-fw " /> Login with Facebook
             </a>
-            <a href="/" className="twitter btn">
+            <a
+              href="/"
+              className="twitter btnlog text-light"
+              style={{ background: "#55acee" }}
+            >
               <i className="fa fa-twitter fa-fw" /> Login with Twitter
             </a>
-            <a href="/" className="google btn">
+            <a
+              href="/"
+              className="google btnlog text-light"
+              style={{ background: "#dd4b39" }}
+            >
               <i className="fa fa-google fa-fw" /> Login with Google+
             </a>
           </div>
