@@ -62,8 +62,8 @@ const login = () => {
       </form>
 
       <div className="bottom-container">
-        <div className="rowlog">
-          <div className="collog">
+        <div className="row rowlog">
+          <div className="col collog">
             <a href="/" style={{ color: "white" }} className="btnlog">
               Sign up
             </a>
