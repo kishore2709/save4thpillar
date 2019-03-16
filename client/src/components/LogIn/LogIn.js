@@ -13,14 +13,14 @@ const login = () => {
 
           <div className="collog ">
             <a
-              href="/"
+              href=""
               className="google btnlog text-light"
               style={{ background: "#dd4b39" }}
             >
               <i className="fa fa-google fa-fw" /> Login with Google+
             </a>
             <a
-              href="/"
+              href=""
               className="twitter btnlog text-light"
               style={{ background: "#55acee" }}
             >
@@ -28,7 +28,7 @@ const login = () => {
             </a>
 
             <a
-              href="/"
+              href=""
               className="fb btnlog text-light"
               style={{ background: "#3b5998" }}
             >
@@ -63,12 +63,12 @@ const login = () => {
       <div className="bottom-container">
         <div className="row rowlog">
           <div className="col collog">
-            <a href="/" style={{ color: "white" }} className="btnlog">
+            <a href="" style={{ color: "white" }} className="btnlog">
               Sign up
             </a>
           </div>
           <div className="collog">
-            <a href="/" style={{ color: "white" }} className="btnlog">
+            <a href="" style={{ color: "white" }} className="btnlog">
               Forgot password?
             </a>
           </div>
