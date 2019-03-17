@@ -22,6 +22,7 @@ const app = express();
 //   });
 
 app.use("/", require("./routes/index"));
+app.use("/users", require("./routes/users"));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`server running at ${port}`));
