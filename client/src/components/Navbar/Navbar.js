@@ -79,7 +79,7 @@ class AppNavbar extends Component {
                 </NavItem>
                 <NavItem className="mr-3">
                   <NavLink
-                    to="search"
+                    to="/search"
                     className="text-dark mr-3"
                     onClick={this.toggle}
                     style={{ textDecoration: "none" }}
