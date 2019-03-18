@@ -1,6 +1,6 @@
 const express = require("express");
-
 const router = express.Router();
+const bcrypt = require("bcryptjs");
 
 const User = require("../models/User");
 
@@ -61,8 +61,23 @@ router.post("/register", (req, res) => {
           password: password
         });
 
-        console.log(newUser);
-        res.send("user created but not saved to DB");
+        // Generating Hash Password
+        bcrypt.genSalt(10, (err, salt) => {
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+
+            // set pass to Hash
+            newUser.password = hash;
+
+            // Lets save to DB
+            newUser
+              .save()
+              .then(user => {
+                res.redirect("/users/login");
+              })
+              .catch(err => console.log(err));
+          });
+        });
       }
     });
   }
