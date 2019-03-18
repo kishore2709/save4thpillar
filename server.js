@@ -8,18 +8,18 @@ const app = express();
 // app.use(bodyParser.json());
 
 // DB config
-// const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").mongoURI;
 
 // DB connect
 // { useNewUrlParser: true } added so i can add '$' in my pass character
-// mongoose
-//   .connect(db, { useNewUrlParser: true })
-//   .then(() => {
-//     console.log("database connected");
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
+mongoose
+  .connect(db, { useNewUrlParser: true })
+  .then(() => {
+    console.log("MongoDb conncected...");
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
