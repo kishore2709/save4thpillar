@@ -48,13 +48,21 @@ router.post("/register", (req, res) => {
         // user found in DB
         errors.push({ msg: "Email is already registered" });
         res.render("register", {
-          errors,
-          name,
-          email,
-          password,
-          password2
+          errors: errors,
+          name: name,
+          email: email,
+          password: password,
+          password2: password2
         });
       } else {
+        const newUser = new User({
+          name: name,
+          email: email,
+          password: password
+        });
+
+        console.log(newUser);
+        res.send("user created but not saved to DB");
       }
     });
   }
