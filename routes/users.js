@@ -23,12 +23,10 @@ router.post("/register", (req, res) => {
 
   if (!name || !email || !password || !password2) {
     errors.push({ msg: "Please enter all fields" });
-    res.send(req.body);
   }
 
   if (password != password2) {
     errors.push({ msg: "Passwords do not match" });
-    res.send(req.body);
   }
 
   if (password.length < 6) {
@@ -44,7 +42,21 @@ router.post("/register", (req, res) => {
       password2
     });
   } else {
-    res.send("Registration passed");
+    // Validaation passed and next is to find the user
+    User.findOne({ email: email }).then(user => {
+      if (user) {
+        // user found in DB
+        errors.push({ msg: "Email is already registered" });
+        res.render("register", {
+          errors,
+          name,
+          email,
+          password,
+          password2
+        });
+      } else {
+      }
+    });
   }
 });
 
