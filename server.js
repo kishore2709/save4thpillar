@@ -3,8 +3,12 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const flash = require("connect-flash");
 const session = require("express-session");
+const passport = require("passport");
 
 const app = express();
+
+// Passport config
+require("./config/passport")(passport);
 
 // BodyParser Middleware
 // app.use(bodyParser.json());
@@ -19,6 +23,10 @@ app.use(
     saveUninitialized: true
   })
 );
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Connect flash
 app.use(flash());
