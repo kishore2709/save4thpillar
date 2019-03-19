@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import "./Register.css";
+
 class Register extends Component {
   render() {
     return (
@@ -50,11 +52,19 @@ class Register extends Component {
                 </button>
               </div>
 
-              <p className="text-center">
-                or &nbsp;
-                <Link to="/login">Log in</Link>
-              </p>
+              <div className="clearfix">
+                <label className="pull-left checkbox-inline">
+                  <input type="checkbox" /> Remember me
+                </label>
+                <a href="/" className="pull-right">
+                  Forgot Password?
+                </a>
+              </div>
             </form>
+            <p className="text-center">
+              or &nbsp;
+              <Link to="/login">Log in</Link>
+            </p>
           </div>
         </div>
       </div>

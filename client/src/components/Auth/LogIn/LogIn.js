@@ -34,6 +34,7 @@ class LogIn extends Component {
                 Log in
               </button>
             </div>
+            
             <div className="clearfix">
               <label className="pull-left checkbox-inline">
                 <input type="checkbox" /> Remember me
@@ -42,6 +43,8 @@ class LogIn extends Component {
                 Forgot Password?
               </a>
             </div>
+
+
           </form>
           <p className="text-center">
             or &nbsp;
