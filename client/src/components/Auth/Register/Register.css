@@ -1,5 +1,8 @@
+.logindiv {
+  width: 80%;
+  margin: auto;
+}
 .login-form {
-  width: auto;
   margin: 0 auto 30px auto;
 }
 .login-form form {
