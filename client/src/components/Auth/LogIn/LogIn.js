@@ -12,9 +12,9 @@ class LogIn extends Component {
             <h2 className="text-center">Log in</h2>
             <div className="form-group">
               <input
-                type="text"
+                type="email"
                 className="form-control"
-                placeholder="Username"
+                placeholder="Enter your email"
                 required="required"
               />
             </div>
@@ -22,7 +22,7 @@ class LogIn extends Component {
               <input
                 type="password"
                 className="form-control"
-                placeholder="Password"
+                placeholder="Enter your password"
                 required="required"
               />
             </div>
