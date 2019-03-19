@@ -13,7 +13,15 @@ class Register extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Username"
+                  placeholder="Enter your name"
+                  required="required"
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter your email"
                   required="required"
                 />
               </div>
@@ -26,20 +34,20 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Confirm your password"
+                  required="required"
+                />
+              </div>
+              <div className="form-group">
                 <button
                   type="submit"
                   className="btn btn-danger btn-block btnstyle"
                 >
                   Register
                 </button>
-              </div>
-              <div className="clearfix">
-                <label className="pull-left checkbox-inline">
-                  <input type="checkbox" /> Remember me
-                </label>
-                <a href="/" className="pull-right">
-                  Forgot Password?
-                </a>
               </div>
 
               <p className="text-center">
