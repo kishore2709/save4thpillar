@@ -16,7 +16,7 @@ import About from "../About/About";
 import TopList from "../TopList/TopList";
 import ContactUs from "../ContactUs/ContactUs";
 import Search from "../Search/Search";
-import Login from "../LogIn/LogIn";
+import Login from "../Auth/LogIn/LogIn";
 
 import "./Navbar.css";
 
