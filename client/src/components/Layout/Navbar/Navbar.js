@@ -16,7 +16,8 @@ import About from "../About/About";
 import TopList from "../TopList/TopList";
 import ContactUs from "../ContactUs/ContactUs";
 import Search from "../Search/Search";
-import Login from "../Auth/LogIn/LogIn";
+import Login from "../../Auth/LogIn/LogIn";
+import Register from "../../Auth/Register/Register";
 
 import "./Navbar.css";
 
@@ -112,6 +113,7 @@ class AppNavbar extends Component {
           <Route path="/contact-us" exact component={ContactUs} />
           <Route path="/search" exact component={Search} />
           <Route path="/login" exact component={Login} />
+          <Route path="/register" exact component={Register} />
         </Switch>
       </div>
     );

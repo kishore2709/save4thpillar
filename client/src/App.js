@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Layout/Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import axios from "axios";
