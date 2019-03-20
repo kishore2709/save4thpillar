@@ -7,7 +7,8 @@ import "./LogIn.css";
 class LogIn extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    errors: {}
   };
 
   onChangeHandler = event => {
@@ -19,15 +20,19 @@ class LogIn extends Component {
   loginHandler = e => {
     e.preventDefault();
     console.log("login handler");
+
     const loginCredentials = {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(loginCredentials);
+
     axios
       .post("/users/login", loginCredentials)
       .then(res => console.log(res))
-      .catch(err => console.log(err));
+      .catch(err => {
+        this.setState({ errors: err.response.data });
+        console.log(err.response.data);
+      });
   };
 
   render() {
@@ -46,7 +51,6 @@ class LogIn extends Component {
                 placeholder="Enter your email"
                 name="email"
                 onChange={this.onChangeHandler}
-                required="required"
               />
             </div>
             <div className="form-group">
@@ -56,7 +60,6 @@ class LogIn extends Component {
                 placeholder="Enter your password"
                 name="password"
                 onChange={this.onChangeHandler}
-                required="required"
               />
             </div>
             <div className="form-group">

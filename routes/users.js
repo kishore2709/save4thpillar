@@ -105,7 +105,7 @@ router.post("/register", (req, res) => {
 });
 
 // Login Handle
-router.post("/login", (req, res, next) => {
+router.post("/login", (req, res) => {
   // passport.authenticate("local", {
   //   successRedirect: "/dashboard",
   //   failureRedirect: "/users/login",
@@ -115,21 +115,22 @@ router.post("/login", (req, res, next) => {
   const { email, password } = req.body;
   console.log(req.body);
 
-  let errors = [];
+  let errors = {
+    email: "",
+    password: ""
+  };
 
-  if (!email || !password) {
-    errors.push({ msg: "Please enter all fields" });
-    res.json({ msg: "Please enter all fields" });
+  if (!email) {
+    errors.email = "Email field is required";
+    res.status(400).json(errors);
+  }
+
+  if (!password) {
+    errors.password = "password field is required";
+    res.status(400).json(errors);
   }
 
   if (errors.length > 0) {
-    res.render("register", {
-      errors,
-      name,
-      email,
-      password,
-      password2
-    });
   } else {
     User.findOne({ email }).then(user => {
       if (!user) {
