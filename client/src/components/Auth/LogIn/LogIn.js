@@ -36,6 +36,8 @@ class LogIn extends Component {
   };
 
   render() {
+    const { errors } = this.state;
+
     return (
       <div className="container logindiv">
         <div className="login-form">
@@ -52,6 +54,9 @@ class LogIn extends Component {
                 name="email"
                 onChange={this.onChangeHandler}
               />
+              {errors.email ? (
+                <p className="text-danger text-left"> {errors.email}</p>
+              ) : null}
             </div>
             <div className="form-group">
               <input
@@ -61,6 +66,12 @@ class LogIn extends Component {
                 name="password"
                 onChange={this.onChangeHandler}
               />
+              {errors.password || errors.passincorrect ? (
+                <p className="text-danger text-left">
+                  {" "}
+                  {errors.password} {errors.passincorrect}
+                </p>
+              ) : null}
             </div>
             <div className="form-group">
               <button

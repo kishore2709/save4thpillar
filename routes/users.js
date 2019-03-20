@@ -117,7 +117,8 @@ router.post("/login", (req, res) => {
 
   let errors = {
     email: "",
-    password: ""
+    password: "",
+    passincorrect: ""
   };
 
   if (!email) {
@@ -141,7 +142,8 @@ router.post("/login", (req, res) => {
         if (isMatch) {
           res.json({ msg: "success! You are now logged in" });
         } else {
-          return res.json({ password: "password incorrect" });
+          errors.passincorrect = "password incorrect";
+          return res.status(400).json(errors);
         }
       });
     });
