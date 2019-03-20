@@ -10,31 +10,31 @@ class LogIn extends Component {
     password: ""
   };
 
-  loginHandler = () => {
-    console.log("login handler");
-
-    const loginCredentials = {
-      email: this.state.email,
-      password: this.state.password
-    };
-
-    axios
-      .post("/users/login", loginCredentials)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-  };
-
   onChangeHandler = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
+  loginHandler = e => {
+    e.preventDefault();
+    console.log("login handler");
+    const loginCredentials = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log(loginCredentials);
+    axios
+      .post("/users/login", loginCredentials)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="container logindiv">
         <div className="login-form">
-          <form action="" method="post">
+          <form onSubmit={this.loginHandler}>
             <p className="h2 text-center" style={{ marginBottom: "30px" }}>
               <i className="fa fa-sign-in" aria-hidden="true" />
               &nbsp;&nbsp; Log in
@@ -63,7 +63,6 @@ class LogIn extends Component {
               <button
                 type="submit"
                 className="btn btn-danger btn-block btnstyle"
-                onClick={this.loginHandler}
               >
                 Log in
               </button>

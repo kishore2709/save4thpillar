@@ -11,15 +11,16 @@ class Register extends Component {
     password2: ""
   };
 
-  onChange = e => {
+  onChangeHandler = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
-  registerHandler = () => {
+  registerHandler = e => {
+    e.preventDefault();
     console.log("register handler");
 
-    const Credentials = {
+    const registerCredentials = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
@@ -27,8 +28,10 @@ class Register extends Component {
     };
 
     axios
-      .post("/users/register", Credentials)
-      .then(res => console.log(res))
+      .post("/users/register", registerCredentials)
+      .then(res => {
+        console.log(res);
+      })
       .catch(err => console.log(err));
   };
 
@@ -37,7 +40,7 @@ class Register extends Component {
       <div className="container">
         <div className="container logindiv">
           <div className="login-form">
-            <form action="" method="post">
+            <form onSubmit={this.registerHandler}>
               <p className="h2 text-center" style={{ marginBottom: "30px" }}>
                 <i className="fa fa-user-plus" aria-hidden="true">
                   &nbsp; &nbsp;
@@ -52,7 +55,7 @@ class Register extends Component {
                   placeholder="Enter your name"
                   name="name"
                   value={this.state.name}
-                  onChange={this.onChange}
+                  onChange={this.onChangeHandler}
                 />
               </div>
               <div className="form-group">
@@ -62,7 +65,7 @@ class Register extends Component {
                   placeholder="Enter your email"
                   name="email"
                   value={this.state.email}
-                  onChange={this.onChange}
+                  onChange={this.onChangeHandler}
                 />
               </div>
               <div className="form-group">
@@ -72,7 +75,7 @@ class Register extends Component {
                   placeholder="Password"
                   name="password"
                   value={this.state.password}
-                  onChange={this.onChange}
+                  onChange={this.onChangeHandler}
                 />
               </div>
               <div className="form-group">
@@ -82,14 +85,13 @@ class Register extends Component {
                   placeholder="Confirm your password"
                   name="password2"
                   value={this.state.password2}
-                  onChange={this.onChange}
+                  onChange={this.onChangeHandler}
                 />
               </div>
               <div className="form-group">
                 <button
                   type="submit"
                   className="btn btn-danger btn-block btnstyle"
-                  onClick={this.registerHandler}
                 >
                   Register
                 </button>
