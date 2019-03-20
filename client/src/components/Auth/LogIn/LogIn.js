@@ -9,7 +9,10 @@ class LogIn extends Component {
       <div className="container logindiv">
         <div className="login-form">
           <form action="" method="post">
-            <h2 className="text-center">Log in</h2>
+            <p className="h2 text-center" style={{ marginBottom: "30px" }}>
+              <i className="fa fa-sign-in" aria-hidden="true" />
+              &nbsp;&nbsp; Log in
+            </p>
             <div className="form-group">
               <input
                 type="email"
@@ -34,7 +37,7 @@ class LogIn extends Component {
                 Log in
               </button>
             </div>
-            
+
             <div className="clearfix">
               <label className="pull-left checkbox-inline">
                 <input type="checkbox" /> Remember me
@@ -43,8 +46,6 @@ class LogIn extends Component {
                 Forgot Password?
               </a>
             </div>
-
-
           </form>
           <p className="text-center">
             or &nbsp;

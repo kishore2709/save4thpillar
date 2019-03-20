@@ -10,7 +10,13 @@ class Register extends Component {
         <div className="container logindiv">
           <div className="login-form">
             <form action="" method="post">
-              <h2 className="text-center">Register new user</h2>
+              <p className="h2 text-center" style={{ marginBottom: "30px" }}>
+                <i className="fa fa-user-plus" aria-hidden="true">
+                  &nbsp; &nbsp;
+                </i>
+                Register new user
+              </p>
+
               <div className="form-group">
                 <input
                   type="text"
