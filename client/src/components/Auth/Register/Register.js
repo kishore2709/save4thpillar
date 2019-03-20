@@ -4,18 +4,30 @@ import axios from "axios";
 import "./Register.css";
 
 class Register extends Component {
+  state = {
+    name: "",
+    email: "",
+    password: "",
+    password2: ""
+  };
+
+  onChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
   registerHandler = () => {
     console.log("register handler");
 
-    const registerCredentials = {
-      name: "saif",
-      email: "saif@gmail.com",
-      password: "123456",
-      password2: "123456"
+    const Credentials = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.password2
     };
 
     axios
-      .post("/users/register", registerCredentials)
+      .post("/users/register", Credentials)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
@@ -38,7 +50,9 @@ class Register extends Component {
                   type="text"
                   className="form-control"
                   placeholder="Enter your name"
-                  required="required"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.onChange}
                 />
               </div>
               <div className="form-group">
@@ -46,7 +60,9 @@ class Register extends Component {
                   type="email"
                   className="form-control"
                   placeholder="Enter your email"
-                  required="required"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
                 />
               </div>
               <div className="form-group">
@@ -54,7 +70,9 @@ class Register extends Component {
                   type="password"
                   className="form-control"
                   placeholder="Password"
-                  required="required"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
                 />
               </div>
               <div className="form-group">
@@ -62,7 +80,9 @@ class Register extends Component {
                   type="password"
                   className="form-control"
                   placeholder="Confirm your password"
-                  required="required"
+                  name="password2"
+                  value={this.state.password2}
+                  onChange={this.onChange}
                 />
               </div>
               <div className="form-group">

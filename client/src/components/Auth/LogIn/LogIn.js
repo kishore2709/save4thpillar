@@ -5,18 +5,29 @@ import axios from "axios";
 import "./LogIn.css";
 
 class LogIn extends Component {
+  state = {
+    email: "",
+    password: ""
+  };
+
   loginHandler = () => {
     console.log("login handler");
 
     const loginCredentials = {
-      email: "saif@gmail.com",
-      password: "12345"
+      email: this.state.email,
+      password: this.state.password
     };
 
     axios
       .post("/users/login", loginCredentials)
       .then(res => console.log(res))
       .catch(err => console.log(err));
+  };
+
+  onChangeHandler = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
 
   render() {
@@ -33,6 +44,8 @@ class LogIn extends Component {
                 type="email"
                 className="form-control"
                 placeholder="Enter your email"
+                name="email"
+                onChange={this.onChangeHandler}
                 required="required"
               />
             </div>
@@ -41,6 +54,8 @@ class LogIn extends Component {
                 type="password"
                 className="form-control"
                 placeholder="Enter your password"
+                name="password"
+                onChange={this.onChangeHandler}
                 required="required"
               />
             </div>
