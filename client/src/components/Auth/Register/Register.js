@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import classnames from "classnames";
+
 import "./Register.css";
 
 class Register extends Component {
@@ -24,7 +26,8 @@ class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      errors: {}
     };
 
     axios
@@ -32,10 +35,15 @@ class Register extends Component {
       .then(res => {
         console.log(res);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        this.setState({ errors: err.response.data });
+        console.log(err);
+      });
   };
 
   render() {
+    const { errors } = this.state;
+
     return (
       <div className="container">
         <div className="container logindiv">
@@ -51,7 +59,12 @@ class Register extends Component {
               <div className="form-group">
                 <input
                   type="text"
-                  className="form-control"
+                  className={
+                    (classnames("form-control form-control-lg"),
+                    {
+                      "is-invalid": errors
+                    })
+                  }
                   placeholder="Enter your name"
                   name="name"
                   value={this.state.name}
