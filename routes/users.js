@@ -102,19 +102,38 @@ router.post("/login", (req, res, next) => {
   // })(req, res, next);
 
   const { email, password } = req.body;
-  User.findOne({ email }).then(user => {
-    if (!user) {
-      return res.status(404).json({ email: "user not found" });
-    }
+  console.log(req.body);
 
-    bcrypt.compare(password, user.password).then(isMatch => {
-      if (isMatch) {
-        res.json({ msg: "success" });
-      } else {
-        return res.status(400).json({ password: "password incorrect" });
-      }
+  let errors = [];
+
+  if (!email || !password) {
+    errors.push({ msg: "Please enter all fields" });
+    res.json({ mag: "Please enter all fields" });
+  }
+
+  if (errors.length > 0) {
+    res.render("register", {
+      errors,
+      name,
+      email,
+      password,
+      password2
     });
-  });
+  } else {
+    User.findOne({ email }).then(user => {
+      if (!user) {
+        return res.json({ email: "user not found" });
+      }
+
+      bcrypt.compare(password, user.password).then(isMatch => {
+        if (isMatch) {
+          res.json({ msg: "success! You are now logged in" });
+        } else {
+          return res.json({ password: "password incorrect" });
+        }
+      });
+    });
+  }
 });
 
 // Logout Handle

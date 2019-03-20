@@ -5,7 +5,7 @@ import "./Register.css";
 
 class Register extends Component {
   registerHandler = () => {
-    console.log("login handler");
+    console.log("register handler");
 
     const registerCredentials = {
       name: "saif",

@@ -10,7 +10,7 @@ class LogIn extends Component {
 
     const loginCredentials = {
       email: "saif@gmail.com",
-      password: "123456"
+      password: "12345"
     };
 
     axios
