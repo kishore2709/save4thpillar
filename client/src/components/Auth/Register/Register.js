@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import classnames from "classnames";
 
 import "./Register.css";
 
@@ -10,7 +9,8 @@ class Register extends Component {
     name: "",
     email: "",
     password: "",
-    password2: ""
+    password2: "",
+    errors: {}
   };
 
   onChangeHandler = e => {
@@ -26,8 +26,7 @@ class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2,
-      errors: {}
+      password2: this.state.password2
     };
 
     axios
@@ -37,7 +36,7 @@ class Register extends Component {
       })
       .catch(err => {
         this.setState({ errors: err.response.data });
-        console.log(err);
+        console.log(err.response.data);
       });
   };
 
@@ -59,17 +58,15 @@ class Register extends Component {
               <div className="form-group">
                 <input
                   type="text"
-                  className={
-                    (classnames("form-control form-control-lg"),
-                    {
-                      "is-invalid": errors
-                    })
-                  }
+                  className="form-control"
                   placeholder="Enter your name"
                   name="name"
                   value={this.state.name}
                   onChange={this.onChangeHandler}
                 />
+                {errors.name ? (
+                  <p className="text-danger text-left"> {errors.name}</p>
+                ) : null}
               </div>
               <div className="form-group">
                 <input

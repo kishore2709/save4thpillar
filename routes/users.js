@@ -30,11 +30,11 @@ router.post("/register", (req, res) => {
 
   if (!name) {
     errors.name = "Name field is required";
-    res.json(errors.name);
+    res.status(400).json(errors);
   }
   if (!email) {
     errors.email = "Email field is required";
-    res.json(errors.email);
+    res.status(400).json(errors.email);
   }
   if (!password) {
     errors.password = "Password field is required";
