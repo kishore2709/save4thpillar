@@ -77,6 +77,9 @@ class Register extends Component {
                   value={this.state.email}
                   onChange={this.onChangeHandler}
                 />
+                {errors.email ? (
+                  <p className="text-danger text-left"> {errors.email}</p>
+                ) : null}
               </div>
               <div className="form-group">
                 <input
@@ -87,6 +90,12 @@ class Register extends Component {
                   value={this.state.password}
                   onChange={this.onChangeHandler}
                 />
+                {errors.password || errors.passLength ? (
+                  <p className="text-danger text-left">
+                    {" "}
+                    {errors.password} {errors.passLength}
+                  </p>
+                ) : null}
               </div>
               <div className="form-group">
                 <input
@@ -97,6 +106,12 @@ class Register extends Component {
                   value={this.state.password2}
                   onChange={this.onChangeHandler}
                 />
+                {errors.password2 || errors.passMatch ? (
+                  <p className="text-danger text-left">
+                    {" "}
+                    {errors.password2} {errors.passMatch}
+                  </p>
+                ) : null}
               </div>
               <div className="form-group">
                 <button

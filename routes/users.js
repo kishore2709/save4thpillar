@@ -25,7 +25,8 @@ router.post("/register", (req, res) => {
     email: "",
     password: "",
     password2: "",
-    passMatch: ""
+    passMatch: "",
+    passLength: ""
   };
 
   if (!name) {
@@ -34,25 +35,25 @@ router.post("/register", (req, res) => {
   }
   if (!email) {
     errors.email = "Email field is required";
-    res.status(400).json(errors.email);
+    res.status(400).json(errors);
   }
   if (!password) {
     errors.password = "Password field is required";
-    res.json(errors.password);
+    res.status(400).json(errors);
   }
   if (!password2) {
     errors.password2 = "re enter your password";
-    res.json(errors.password2);
+    res.status(400).json(errors);
   }
 
   if (password != password2) {
     errors.passMatch = "password must match";
-    res.json(errors.passMatch);
+    res.status(400).json(errors);
   }
 
   if (password.length < 6) {
-    errors.password = "Password must be at least 6 characters";
-    res.json(errors.password);
+    errors.passLength = "Password must be at least 6 characters";
+    res.status(400).json(errors);
   }
 
   if (errors.length > 0) {
