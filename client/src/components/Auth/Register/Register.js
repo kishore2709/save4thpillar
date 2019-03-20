@@ -1,9 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import "./Register.css";
 
 class Register extends Component {
+  registerHandler = () => {
+    console.log("login handler");
+
+    const registerCredentials = {
+      name: "saif",
+      email: "saif@gmail.com",
+      password: "123456",
+      password2: "123456"
+    };
+
+    axios
+      .post("/users/register", registerCredentials)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="container">
@@ -53,6 +69,7 @@ class Register extends Component {
                 <button
                   type="submit"
                   className="btn btn-danger btn-block btnstyle"
+                  onClick={this.registerHandler}
                 >
                   Register
                 </button>

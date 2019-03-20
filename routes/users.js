@@ -24,14 +24,17 @@ router.post("/register", (req, res) => {
 
   if (!name || !email || !password || !password2) {
     errors.push({ msg: "Please enter all fields" });
+    res.json({ mag: "Please enter all fields" });
   }
 
   if (password != password2) {
     errors.push({ msg: "Passwords do not match" });
+    res.json({ mag: "Passwords do not match" });
   }
 
   if (password.length < 6) {
     errors.push({ msg: "Password must be at least 6 characters" });
+    res.json({ mag: "Password must be at least 6 characters" });
   }
 
   if (errors.length > 0) {
@@ -48,6 +51,7 @@ router.post("/register", (req, res) => {
       if (user) {
         // user found in DB
         errors.push({ msg: "Email is already registered" });
+        res.json({ mag: "Email is already registered" });
         res.render("register", {
           errors: errors,
           name: name,
@@ -78,6 +82,7 @@ router.post("/register", (req, res) => {
                   "success_msg",
                   "You are now registered and can log in"
                 );
+                res.json({ mag: "You are now registered and can log in" });
                 res.redirect("/users/login");
               })
               .catch(err => console.log(err));
@@ -90,11 +95,26 @@ router.post("/register", (req, res) => {
 
 // Login Handle
 router.post("/login", (req, res, next) => {
-  passport.authenticate("local", {
-    successRedirect: "/dashboard",
-    failureRedirect: "/users/login",
-    failureFlash: true
-  })(req, res, next);
+  // passport.authenticate("local", {
+  //   successRedirect: "/dashboard",
+  //   failureRedirect: "/users/login",
+  //   failureFlash: true
+  // })(req, res, next);
+
+  const { email, password } = req.body;
+  User.findOne({ email }).then(user => {
+    if (!user) {
+      return res.status(404).json({ email: "user not found" });
+    }
+
+    bcrypt.compare(password, user.password).then(isMatch => {
+      if (isMatch) {
+        res.json({ msg: "success" });
+      } else {
+        return res.status(400).json({ password: "password incorrect" });
+      }
+    });
+  });
 });
 
 // Logout Handle

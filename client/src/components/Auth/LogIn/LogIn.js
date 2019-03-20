@@ -1,9 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import "./LogIn.css";
 
 class LogIn extends Component {
+  loginHandler = () => {
+    console.log("login handler");
+
+    const loginCredentials = {
+      email: "saif@gmail.com",
+      password: "123456"
+    };
+
+    axios
+      .post("/users/login", loginCredentials)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="container logindiv">
@@ -33,6 +48,7 @@ class LogIn extends Component {
               <button
                 type="submit"
                 className="btn btn-danger btn-block btnstyle"
+                onClick={this.loginHandler}
               >
                 Log in
               </button>
