@@ -20,9 +20,6 @@ router.post("/register", (req, res) => {
   const { name, email, password, password2 } = req.body;
   console.log(req.body);
 
-  const passMatch = null;
-  const passLength = null;
-
   if (!name) {
     res.status(400).json({ name: "Name is required" });
   }
@@ -37,13 +34,13 @@ router.post("/register", (req, res) => {
   }
 
   if (password != password2) {
-    res.status(400).json({ passMatch: "password must match" });
+    res.status(400).json({ password: "password must match" });
   }
 
   if (password.length < 6) {
     res
       .status(400)
-      .json({ passLength: "Password must be at least 6 characters" });
+      .json({ password: "Password must be at least 6 characters" });
   }
 
   // Validaation passed and next is to find the user
@@ -109,7 +106,7 @@ router.post("/login", (req, res) => {
       if (isMatch) {
         res.json({ msg: "success! You are now logged in" });
       } else {
-        return res.status(400).json({ passincorrect: "password incorrect" });
+        return res.status(400).json({ password: "password incorrect" });
       }
     });
   });
