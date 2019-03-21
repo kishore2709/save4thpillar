@@ -126,7 +126,11 @@ router.get(
   "/currentuser",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    res.json({ msg: "Now you are authorized" });
+    res.json({
+      id: req.user.id,
+      name: req.user.name,
+      email: req.user.email
+    });
   }
 );
 
