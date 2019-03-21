@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { connect } from "react-redux";
+import { registerUser } from "../../../actions/authActions";
 
 import "./Register.css";
 
@@ -29,15 +31,17 @@ class Register extends Component {
       password2: this.state.password2
     };
 
-    axios
-      .post("/users/register", registerCredentials)
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        this.setState({ errors: err.response.data });
-        console.log(err.response.data);
-      });
+    this.props.registerUser(registerCredentials);
+
+    // axios
+    //   .post("/users/register", registerCredentials)
+    //   .then(res => {
+    //     console.log(res);
+    //   })
+    //   .catch(err => {
+    //     this.setState({ errors: err.response.data });
+    //     console.log(err.response.data);
+    //   });
   };
 
   render() {
@@ -142,4 +146,7 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default connect(
+  null,
+  { registerUser }
+)(Register);

@@ -79,15 +79,6 @@ router.post("/login", (req, res) => {
   const { email, password } = req.body;
   console.log(req.body);
 
-  // if (!email) {
-
-  //   res.status(400).json({ email: "Email is required" });
-  // }
-
-  // if (!password) {
-  //   res.status(400).json({ password: "password is required" });
-  // }
-
   User.findOne({ email }).then(user => {
     if (!user) {
       errors.email = "user not found";
