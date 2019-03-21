@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const keys = require("../config/keys");
 const jwt = require("jsonwebtoken");
+const passport = require("passport");
 // user Model
 const User = require("../models/User");
 
@@ -127,6 +128,12 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+// Protected route only for protected route
+router.get("/currentUser", passport.authenticate("jwt", { session: false })),
+  (req, res) => {
+    res.json({ msg: "Now you are authorized" });
+  };
 
 // Logout Handle
 router.get("/logout", (req, res) => {
