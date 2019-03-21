@@ -69,9 +69,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              req.flash("success_msg", "You are now registered and can log in");
               res.json({ msg: "You are now registered and can log in" });
-              res.redirect("/users/login");
             })
             .catch(err => console.log(err));
         });
@@ -82,12 +80,6 @@ router.post("/register", (req, res) => {
 
 // Login Handle
 router.post("/login", (req, res) => {
-  // passport.authenticate("local", {
-  //   successRedirect: "/dashboard",
-  //   failureRedirect: "/users/login",
-  //   failureFlash: true
-  // })(req, res, next);
-
   const { email, password } = req.body;
   console.log(req.body);
 
@@ -130,15 +122,19 @@ router.post("/login", (req, res) => {
 });
 
 // Protected route only for protected route
-router.get("/currentUser", passport.authenticate("jwt", { session: false })),
+router.get(
+  "/currentuser",
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     res.json({ msg: "Now you are authorized" });
-  };
+  }
+);
 
 // Logout Handle
-router.get("/logout", (req, res) => {
-  req.logout();
-  req.flash("success_msg", "you are logged out successfully");
-  res.redirect("/users/login");
-});
+// router.get("/logout", (req, res) => {
+//   req.logout();
+//   req.flash("success_msg", "you are logged out successfully");
+//   res.redirect("/users/login");
+// });
+
 module.exports = router;
