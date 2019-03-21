@@ -40,26 +40,18 @@ class AppNavbar extends Component {
   };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     const authLinks = (
       <NavItem className="mr-3">
         <a
-          href="/"
+          href=""
           onClick={this.onLogoutClick}
-          className="nav-link text-dark mr-3"
+          className="text-dark mr-3"
           style={{ textDecoration: "none" }}
         >
           Logout
         </a>
-        <NavLink
-          to="login"
-          className="text-dark mr-3"
-          onClick={this.toggle}
-          style={{ textDecoration: "none" }}
-        >
-          <span className="align-middle hoverp">Log in</span>
-        </NavLink>
       </NavItem>
     );
 
@@ -129,7 +121,6 @@ class AppNavbar extends Component {
                     onClick={this.toggle}
                     style={{ textDecoration: "none" }}
                   >
-                    {/* <span className="align-middle hoverp">Search</span> */}
                     <i
                       className="fa fa-search align-middle hoverp searchicon"
                       aria-hidden="true"
@@ -142,13 +133,13 @@ class AppNavbar extends Component {
           </Container>
         </Navbar>
         <Switch>
-          <Route path="/" exact component={Landing} />
           <Route path="/about" exact component={About} />
           <Route path="/top-list" exact component={TopList} />
           <Route path="/contact-us" exact component={ContactUs} />
           <Route path="/search" exact component={Search} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
+          <Route path="/" exact component={Landing} />
         </Switch>
       </div>
     );
@@ -160,11 +151,11 @@ Navbar.propTypes = {
   auth: PropTypes.object.isRequired
 };
 
-const maptStateToProps = state => ({
+const mapStateToProps = state => ({
   auth: state.auth
 });
 
 export default connect(
-  maptStateToProps,
+  mapStateToProps,
   { logoutUser }
 )(AppNavbar);

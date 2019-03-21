@@ -56,7 +56,7 @@ export const setCurrentUser = decoded => {
 };
 
 // Log user out
-export const logoutUser = () => dispatch => {
+export const logoutUser = userData => dispatch => {
   // Remove token from localStorage
   localStorage.removeItem("jwtToken");
 
