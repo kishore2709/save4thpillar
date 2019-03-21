@@ -92,39 +92,27 @@ router.post("/login", (req, res) => {
   const { email, password } = req.body;
   console.log(req.body);
 
-  let errors = {
-    email: "",
-    password: "",
-    passincorrect: ""
-  };
-
   if (!email) {
-    errors.email = "Email field is required";
-    res.status(400).json(errors);
+    res.status(400).json({ email: "Email is required" });
   }
 
   if (!password) {
-    errors.password = "password field is required";
-    res.status(400).json(errors);
+    res.status(400).json({ password: "password is required" });
   }
 
-  if (errors.length > 0) {
-  } else {
-    User.findOne({ email }).then(user => {
-      if (!user) {
-        return res.json({ email: "user not found" });
+  User.findOne({ email }).then(user => {
+    if (!user) {
+      return res.status(404).json({ email: "email not found" });
+    }
+
+    bcrypt.compare(password, user.password).then(isMatch => {
+      if (isMatch) {
+        res.json({ msg: "success! You are now logged in" });
+      } else {
+        return res.status(400).json({ passincorrect: "password incorrect" });
       }
-
-      bcrypt.compare(password, user.password).then(isMatch => {
-        if (isMatch) {
-          res.json({ msg: "success! You are now logged in" });
-        } else {
-          errors.passincorrect = "password incorrect";
-          return res.status(400).json(errors);
-        }
-      });
     });
-  }
+  });
 });
 
 // Logout Handle
