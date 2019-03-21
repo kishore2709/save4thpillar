@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../../../actions/authActions";
 
 import "./LogIn.css";
 
@@ -10,6 +12,16 @@ class LogIn extends Component {
     password: "",
     errors: {}
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
 
   onChangeHandler = event => {
     this.setState({
@@ -25,14 +37,7 @@ class LogIn extends Component {
       email: this.state.email,
       password: this.state.password
     };
-
-    axios
-      .post("/users/login", loginCredentials)
-      .then(res => console.log(res))
-      .catch(err => {
-        this.setState({ errors: err.response.data });
-        console.log(err.response.data);
-      });
+    this.props.loginUser(loginCredentials);
   };
 
   render() {
@@ -100,5 +105,18 @@ class LogIn extends Component {
     );
   }
 }
+LogIn.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
 
-export default LogIn;
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(LogIn);
