@@ -47,7 +47,7 @@ class Register extends Component {
       <div className="container">
         <div className="container logindiv">
           <div className="login-form">
-            <form onSubmit={this.registerHandler}>
+            <form noValidate onSubmit={this.registerHandler}>
               <p className="h2 text-center" style={{ marginBottom: "30px" }}>
                 <i className="fa fa-user-plus" aria-hidden="true">
                   &nbsp; &nbsp;

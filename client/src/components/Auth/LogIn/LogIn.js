@@ -41,7 +41,7 @@ class LogIn extends Component {
     return (
       <div className="container logindiv">
         <div className="login-form">
-          <form onSubmit={this.loginHandler}>
+          <form noValidate onSubmit={this.loginHandler}>
             <p className="h2 text-center" style={{ marginBottom: "30px" }}>
               <i className="fa fa-sign-in" aria-hidden="true" />
               &nbsp;&nbsp; Log in
