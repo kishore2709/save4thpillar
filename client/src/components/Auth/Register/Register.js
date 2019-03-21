@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import axios from "axios";
+
 import { connect } from "react-redux";
 import { registerUser } from "../../../actions/authActions";
 
@@ -33,16 +33,6 @@ class Register extends Component {
     };
 
     this.props.registerUser(registerCredentials);
-
-    // axios
-    //   .post("/users/register", registerCredentials)
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-    //   .catch(err => {
-    //     this.setState({ errors: err.response.data });
-    //     console.log(err.response.data);
-    //   });
   };
 
   render() {
