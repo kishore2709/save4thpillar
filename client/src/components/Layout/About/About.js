@@ -1,17 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class About extends Component {
-  componentDidMount() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then(res => {
-        const posts = res.data.slice(0, 4);
-        posts.map(post => console.log(post));
-      })
-      .catch(err => console.log(err));
-  }
-
   render() {
     return (
       <div className="container">
