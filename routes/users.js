@@ -20,88 +20,65 @@ router.post("/register", (req, res) => {
   const { name, email, password, password2 } = req.body;
   console.log(req.body);
 
-  let errors = {
-    name: "",
-    email: "",
-    password: "",
-    password2: "",
-    passMatch: "",
-    passLength: ""
-  };
+  const passMatch = null;
+  const passLength = null;
 
   if (!name) {
-    errors.name = "Name field is required";
-    res.status(400).json(errors);
+    res.status(400).json({ name: "Name is required" });
   }
   if (!email) {
-    errors.email = "Email field is required";
-    res.status(400).json(errors);
+    res.status(400).json({ email: "email is required" });
   }
   if (!password) {
-    errors.password = "Password field is required";
-    res.status(400).json(errors);
+    res.status(400).json({ password: "password is required" });
   }
   if (!password2) {
-    errors.password2 = "re enter your password";
-    res.status(400).json(errors);
+    res.status(400).json({ password2: "re enter your password" });
   }
 
   if (password != password2) {
-    errors.passMatch = "password must match";
-    res.status(400).json(errors);
+    res.status(400).json({ passMatch: "password must match" });
   }
 
   if (password.length < 6) {
-    errors.passLength = "Password must be at least 6 characters";
-    res.status(400).json(errors);
+    res
+      .status(400)
+      .json({ passLength: "Password must be at least 6 characters" });
   }
 
-  if (errors.length > 0) {
-  } else {
-    // Validaation passed and next is to find the user
-    User.findOne({ email: email }).then(user => {
-      if (user) {
-        // user found in DB
-        res.json({ msg: "Email is already registered" });
-        res.render("register", {
-          errors: errors,
-          name: name,
-          email: email,
-          password: password,
-          password2: password2
-        });
-      } else {
-        const newUser = new User({
-          name: name,
-          email: email,
-          password: password
-        });
+  // Validaation passed and next is to find the user
+  User.findOne({ email: email }).then(user => {
+    if (user) {
+      // user found in DB
+      res.json({ msg: "Email is already registered" });
+    } else {
+      const newUser = new User({
+        name: name,
+        email: email,
+        password: password
+      });
 
-        // Generating Hash Password
-        bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(newUser.password, salt, (err, hash) => {
-            if (err) throw err;
+      // Generating Hash Password
+      bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+          if (err) throw err;
 
-            // set pass to Hash
-            newUser.password = hash;
+          // set pass to Hash
+          newUser.password = hash;
 
-            // Lets save to DB
-            newUser
-              .save()
-              .then(user => {
-                req.flash(
-                  "success_msg",
-                  "You are now registered and can log in"
-                );
-                res.json({ msg: "You are now registered and can log in" });
-                res.redirect("/users/login");
-              })
-              .catch(err => console.log(err));
-          });
+          // Lets save to DB
+          newUser
+            .save()
+            .then(user => {
+              req.flash("success_msg", "You are now registered and can log in");
+              res.json({ msg: "You are now registered and can log in" });
+              res.redirect("/users/login");
+            })
+            .catch(err => console.log(err));
         });
-      }
-    });
-  }
+      });
+    }
+  });
 });
 
 // Login Handle
