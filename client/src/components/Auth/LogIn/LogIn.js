@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../../actions/authActions";
@@ -98,7 +98,7 @@ class LogIn extends Component {
           </form>
           <p className="text-center">
             or &nbsp;
-            <Link to="/register">Create an Account</Link>
+            <NavLink to="/register">Create an Account</NavLink>
           </p>
         </div>
       </div>

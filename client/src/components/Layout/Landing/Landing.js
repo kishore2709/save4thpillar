@@ -1,19 +1,16 @@
 import React, { Component } from "react";
+import classnames from "classnames";
 
 import {
   Container,
-  Table,
-  Button,
   TabContent,
   TabPane,
   Nav,
   NavItem,
-  NavLink,
-  Row,
-  Col
+  NavLink
 } from "reactstrap";
 
-import classnames from "classnames";
+import NewsChannelCards from "./NewsChannelCards/NewsChannelCards";
 
 class Landing extends Component {
   state = {
@@ -65,161 +62,10 @@ class Landing extends Component {
           </Nav>
           <TabContent activeTab={this.state.activeTab}>
             <TabPane tabId="1">
-              <Row>
-                <Col sm="12">
-                  <Table responsive>
-                    <thead>
-                      <tr>
-                        <th>Ranking</th>
-                        <th>Channel Name</th>
-                        <th>Current Rating</th>
-                        <th>Read Comments</th>
-                        <th>Rate this Channel</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>NDTV</td>
-                        <td>7/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Aaj Tak</td>
-                        <td>4/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Times Now</td>
-                        <td>2/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </Col>
-              </Row>
+              <NewsChannelCards />
             </TabPane>
-            <TabPane tabId="2">
-              <Row>
-                <Col sm="12">
-                  <Table responsive>
-                    <thead>
-                      <tr>
-                        <th>Ranking</th>
-                        <th>Anchor Name</th>
-                        <th>Current Rating</th>
-                        <th>Read Comments</th>
-                        <th>Rate this Anchor</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Ravish Kumar</td>
-                        <td>8/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Barkha Dutt</td>
-                        <td>6/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Arnab Goswami</td>
-                        <td> -10/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </Col>
-              </Row>
-            </TabPane>
-            <TabPane tabId="3">
-              <Row>
-                <Col sm="12">
-                  <Table responsive>
-                    <thead>
-                      <tr>
-                        <th>Ranking</th>
-                        <th>Journalist/Reporter Name</th>
-                        <th>Current Rating</th>
-                        <th>Read Comments</th>
-                        <th>Rate this Journalist/Reporter</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Rajat Sharma </td>
-                        <td>7/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Anjana</td>
-                        <td>3/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Abhisar Sharma</td>
-                        <td>5/10</td>
-                        <td>read more...</td>
-                        <td>
-                          <Button color="danger" size="sm">
-                            Rate Now
-                          </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </Col>
-              </Row>
-            </TabPane>
+            <TabPane tabId="2"> tab pane 2</TabPane>
+            <TabPane tabId="3"> tab pane 3</TabPane>
           </TabContent>
         </Container>
       </div>

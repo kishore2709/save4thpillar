@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Link, withRouter } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { registerUser } from "../../../actions/authActions";
@@ -134,7 +134,7 @@ class Register extends Component {
             </form>
             <p className="text-center">
               or &nbsp;
-              <Link to="/login">Log in</Link>
+              <NavLink to="/login">Log in</NavLink>
             </p>
           </div>
         </div>

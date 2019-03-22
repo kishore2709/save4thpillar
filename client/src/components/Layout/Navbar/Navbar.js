@@ -36,6 +36,7 @@ class AppNavbar extends Component {
 
   onLogoutClick = e => {
     e.preventDefault();
+
     this.props.logoutUser();
   };
 
@@ -43,29 +44,24 @@ class AppNavbar extends Component {
     const { isAuthenticated } = this.props.auth;
 
     const authLinks = (
-      <NavItem className="mr-3">
-        <a
-          href=""
-          onClick={this.onLogoutClick}
-          className="text-dark mr-3"
-          style={{ textDecoration: "none" }}
-        >
-          Logout
-        </a>
-      </NavItem>
+      <button
+        onClick={this.onLogoutClick}
+        className="text-light mr-3 bg-danger "
+        style={{ textDecoration: "none" }}
+      >
+        Logout
+      </button>
     );
 
     const guestLinks = (
-      <NavItem className="mr-3">
-        <NavLink
-          to="login"
-          className="text-dark mr-3"
-          onClick={this.toggle}
-          style={{ textDecoration: "none" }}
-        >
-          <span className="align-middle hoverp">Log in</span>
-        </NavLink>
-      </NavItem>
+      <NavLink
+        to="login"
+        className="text-dark mr-3"
+        onClick={this.toggle}
+        style={{ textDecoration: "none" }}
+      >
+        <span className="align-middle hoverp">Log in</span>
+      </NavLink>
     );
 
     return (
@@ -127,19 +123,21 @@ class AppNavbar extends Component {
                     />
                   </NavLink>
                 </NavItem>
-                {isAuthenticated ? authLinks : guestLinks}
+                <NavItem className="mr-3">
+                  {isAuthenticated ? authLinks : guestLinks}
+                </NavItem>
               </Nav>
             </Collapse>
           </Container>
         </Navbar>
         <Switch>
+          <Route path="/" exact component={Landing} />
           <Route path="/about" exact component={About} />
           <Route path="/top-list" exact component={TopList} />
           <Route path="/contact-us" exact component={ContactUs} />
           <Route path="/search" exact component={Search} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
-          <Route path="/" exact component={Landing} />
         </Switch>
       </div>
     );
