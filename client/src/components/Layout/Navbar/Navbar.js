@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, NavLink, Switch } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
 
@@ -144,10 +144,10 @@ class AppNavbar extends Component {
   }
 }
 
-Navbar.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-};
+// Navbar.propTypes = {
+//   logoutUser: PropTypes.func.isRequired,
+//   auth: PropTypes.object.isRequired
+// };
 
 const mapStateToProps = state => ({
   auth: state.auth
