@@ -41,8 +41,8 @@ class AppNavbar extends Component {
   };
 
   render() {
-    const { isAuthenticated } = this.props.auth;
-
+    const { isAuthenticated, user } = this.props.auth;
+    console.log(user);
     const authLinks = (
       <button
         onClick={this.onLogoutClick}
@@ -72,6 +72,17 @@ class AppNavbar extends Component {
       >
         <span className="align-middle hoverp">Register</span>
       </NavLink>
+    );
+
+    const guestLinks = (
+      <div>
+        <NavItem className="mr-3" style={{ display: "inline-block" }}>
+          {guestLinks1}
+        </NavItem>
+        <NavItem className="mr-3" style={{ display: "inline-block" }}>
+          {guestLinks2}
+        </NavItem>
+      </div>
     );
 
     return (
@@ -133,14 +144,7 @@ class AppNavbar extends Component {
                     />
                   </NavLink>
                 </NavItem>
-
-                <NavItem className="mr-3">
-                  {isAuthenticated ? authLinks : guestLinks1}
-                </NavItem>
-
-                <NavItem className="mr-3">
-                  {isAuthenticated ? authLinks : guestLinks2}
-                </NavItem>
+                {isAuthenticated ? authLinks : guestLinks}
               </Nav>
             </Collapse>
           </Container>
