@@ -20,13 +20,24 @@ const newsChannelCard = () => {
                   founded it. NDTV is an acronym for the original name of the
                   company, New Delhi Television.
                 </p>
-
-                <div class="rating">
-                  <span>☆</span>
-                  <span>☆</span>
-                  <span>☆</span>
-                  <span>☆</span>
-                  <span>☆</span>
+                <div className="row">
+                  <div className="col-md-7 col-xl-7 col-sm-8 col-xs-8">
+                    <div class="rating">
+                      <span>☆</span>
+                      <span>☆</span>
+                      <span>☆</span>
+                      <span>☆</span>
+                      <span>☆</span>
+                    </div>
+                  </div>
+                  <div className="col-md-5 col-xl-5 col-sm-4 col-xs-4">
+                    <p
+                      className="h5 text-danger font-italic"
+                      style={{ paddingTop: "10px" }}
+                    >
+                      <u>write review</u>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

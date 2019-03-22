@@ -2,7 +2,7 @@
   unicode-bidi: bidi-override;
   direction: rtl;
   text-align: center;
-  font-size: 40px;
+  font-size: 28px;
 
   color: orange;
 }
@@ -34,9 +34,16 @@
 }
 .card {
   font-size: 1em;
+  margin: 0;
   overflow: hidden;
   padding: 5;
   border: none;
   border-radius: 0.28571429rem;
   box-shadow: 0 8px 13px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+@media (max-width: 576px) {
+  .card {
+    margin: 0px -20px;
+  }
 }
