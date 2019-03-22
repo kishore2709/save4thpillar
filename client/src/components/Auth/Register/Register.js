@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { NavLink, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { registerUser } from "../../../actions/authActions";
@@ -22,14 +22,8 @@ class Register extends Component {
     }
   }
 
-  onChangeHandler = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
   registerHandler = e => {
     e.preventDefault();
-    console.log("register handler");
 
     const registerCredentials = {
       name: this.state.name,
@@ -39,6 +33,12 @@ class Register extends Component {
     };
 
     this.props.registerUser(registerCredentials, this.props.history);
+  };
+
+  onChangeHandler = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   render() {
@@ -134,7 +134,7 @@ class Register extends Component {
             </form>
             <p className="text-center">
               or &nbsp;
-              <NavLink to="/login">Log in</NavLink>
+              <Link to="/login">Log in</Link>
             </p>
           </div>
         </div>

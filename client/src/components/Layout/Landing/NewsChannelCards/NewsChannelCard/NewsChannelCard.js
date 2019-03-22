@@ -22,7 +22,7 @@ const newsChannelCard = () => {
                 </p>
                 <div className="row">
                   <div className="col-md-7 col-xl-7 col-sm-8 col-xs-8">
-                    <div class="rating">
+                    <div className="rating">
                       <span>☆</span>
                       <span>☆</span>
                       <span>☆</span>

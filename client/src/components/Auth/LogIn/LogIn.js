@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../../actions/authActions";
@@ -15,7 +15,7 @@ class LogIn extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push("/");
     }
 
     if (nextProps.errors) {
@@ -23,21 +23,20 @@ class LogIn extends Component {
     }
   }
 
-  onChangeHandler = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
-
   loginHandler = e => {
     e.preventDefault();
-    console.log("login handler");
 
     const loginCredentials = {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.loginUser(loginCredentials);
+    this.props.loginUser(loginCredentials, this.props.history);
+  };
+
+  onChangeHandler = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
 
   render() {
@@ -57,6 +56,7 @@ class LogIn extends Component {
                 className="form-control"
                 placeholder="Enter your email"
                 name="email"
+                value={this.state.email}
                 onChange={this.onChangeHandler}
               />
               {errors.email ? (
@@ -69,6 +69,7 @@ class LogIn extends Component {
                 className="form-control"
                 placeholder="Enter your password"
                 name="password"
+                value={this.state.password}
                 onChange={this.onChangeHandler}
               />
               {errors.password || errors.passincorrect ? (
@@ -119,4 +120,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { loginUser }
-)(LogIn);
+)(withRouter(LogIn));

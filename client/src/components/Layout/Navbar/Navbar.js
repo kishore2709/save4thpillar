@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, NavLink, Switch } from "react-router-dom";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
 
@@ -53,14 +53,24 @@ class AppNavbar extends Component {
       </button>
     );
 
-    const guestLinks = (
+    const guestLinks1 = (
       <NavLink
-        to="login"
+        to="/login"
         className="text-dark mr-3"
         onClick={this.toggle}
         style={{ textDecoration: "none" }}
       >
         <span className="align-middle hoverp">Log in</span>
+      </NavLink>
+    );
+    const guestLinks2 = (
+      <NavLink
+        to="/register"
+        className="text-dark mr-3"
+        onClick={this.toggle}
+        style={{ textDecoration: "none" }}
+      >
+        <span className="align-middle hoverp">Register</span>
       </NavLink>
     );
 
@@ -123,31 +133,36 @@ class AppNavbar extends Component {
                     />
                   </NavLink>
                 </NavItem>
+
                 <NavItem className="mr-3">
-                  {isAuthenticated ? authLinks : guestLinks}
+                  {isAuthenticated ? authLinks : guestLinks1}
+                </NavItem>
+
+                <NavItem className="mr-3">
+                  {isAuthenticated ? authLinks : guestLinks2}
                 </NavItem>
               </Nav>
             </Collapse>
           </Container>
         </Navbar>
         <Switch>
-          <Route path="/" exact component={Landing} />
           <Route path="/about" exact component={About} />
           <Route path="/top-list" exact component={TopList} />
           <Route path="/contact-us" exact component={ContactUs} />
           <Route path="/search" exact component={Search} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
+          <Route path="/" component={Landing} />
         </Switch>
       </div>
     );
   }
 }
 
-// Navbar.propTypes = {
-//   logoutUser: PropTypes.func.isRequired,
-//   auth: PropTypes.object.isRequired
-// };
+Navbar.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => ({
   auth: state.auth
