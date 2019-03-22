@@ -41,12 +41,13 @@ class AppNavbar extends Component {
   };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
-    console.log(user);
+    const { isAuthenticated } = this.props.auth;
+
     const authLinks = (
       <button
+        type="button"
         onClick={this.onLogoutClick}
-        className="text-light mr-3 bg-danger "
+        className="mr-3 btn btn-danger font-weight-bold"
         style={{ textDecoration: "none" }}
       >
         Logout
@@ -55,6 +56,7 @@ class AppNavbar extends Component {
 
     const guestLinks1 = (
       <NavLink
+        exact
         to="/login"
         className="text-dark mr-3"
         onClick={this.toggle}
@@ -65,6 +67,7 @@ class AppNavbar extends Component {
     );
     const guestLinks2 = (
       <NavLink
+        exact
         to="/register"
         className="text-dark mr-3"
         onClick={this.toggle}
