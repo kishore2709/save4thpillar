@@ -10,8 +10,14 @@ class Rating extends Component {
     rating: null
   };
 
+  componentDidMount() {
+    const sessionData = sessionStorage.getItem("rating");
+    this.setState({
+      rating: sessionData
+    });
+  }
+
   onStarClick = (nextValue, prevValue, name) => {
-    // this.setState({ rating: nextValue });
     const data = {
       id: "5c94a614b2f72207c2c5c61d",
       rating: nextValue
@@ -21,6 +27,10 @@ class Rating extends Component {
       .post("/users/", data)
       .then(res => {
         console.log(res);
+        this.setState({
+          rating: res.data.rating
+        });
+        sessionStorage.setItem("rating", res.data.rating);
       })
       .catch(err => console.log(err));
   };
@@ -33,7 +43,7 @@ class Rating extends Component {
         <StarRatingComponent
           name="rate1"
           starCount={10}
-          value={rating}
+          value={this.state.rating}
           onStarClick={this.onStarClick}
           emptyStarColor={"#ccc"}
           starColor={"orange"}
@@ -52,6 +62,7 @@ class Rating extends Component {
         >
           you rated: {rating}
         </p>
+        <p>{this.state.rating}</p>
       </div>
     );
   }
