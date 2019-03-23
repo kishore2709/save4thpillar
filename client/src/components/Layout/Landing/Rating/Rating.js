@@ -1,13 +1,28 @@
 import React, { Component } from "react";
+import axios from "axios";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
 import StarRatingComponent from "react-star-rating-component";
 
 class Rating extends Component {
-  constructor() {
-    super();
+  state = {
+    rating: null
+  };
 
-    this.state = {
-      rating: null
+  componentWillUpdate(nextProps) {
+    const data = {
+      id: "5c94a614b2f72207c2c5c61d",
+      rating: this.state.rating
     };
+    console.log(nextProps);
+
+    axios
+      .post("/users/", data)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
   }
 
   onStarClick = (nextValue, prevValue, name) => {
@@ -46,4 +61,15 @@ class Rating extends Component {
   }
 }
 
-export default Rating;
+Rating.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Rating);
