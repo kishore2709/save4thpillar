@@ -27,13 +27,20 @@ class Rating extends Component {
           emptyStarColor={"#ccc"}
           starColor={"orange"}
           renderStarIcon={() => (
-            <span style={{ fontSize: "24px" }}>
+            <span style={{ fontSize: "20px" }}>
               <i className="fas fa-star" />
             </span>
           )}
         />
 
-        <p>you rated: {rating}</p>
+        <p
+          style={{
+            marginLeft: "10px",
+            marginTop: "-10px"
+          }}
+        >
+          you rated: {rating}
+        </p>
       </div>
     );
   }
