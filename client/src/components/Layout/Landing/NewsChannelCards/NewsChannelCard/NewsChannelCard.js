@@ -1,6 +1,7 @@
 import React from "react";
-import "./NewsChannelCard.css";
 
+import Rating from "../../Rating/Rating";
+import "./NewsChannelCard.css";
 import NDTV from "../../../../../assets/ndtv.png";
 
 const newsChannelCard = () => {
@@ -22,13 +23,7 @@ const newsChannelCard = () => {
                 </p>
                 <div className="row">
                   <div className="col-md-7 col-xl-7 col-sm-8 col-xs-8">
-                    <div className="rating">
-                      <span>☆</span>
-                      <span>☆</span>
-                      <span>☆</span>
-                      <span>☆</span>
-                      <span>☆</span>
-                    </div>
+                    <Rating />
                   </div>
                   <div className="col-md-5 col-xl-5 col-sm-4 col-xs-4">
                     <p
