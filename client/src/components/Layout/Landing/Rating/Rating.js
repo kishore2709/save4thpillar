@@ -11,11 +11,11 @@ class Rating extends Component {
   };
 
   componentWillUpdate(nextProps) {
+    console.log(nextProps);
     const data = {
       id: "5c94a614b2f72207c2c5c61d",
       rating: this.state.rating
     };
-    console.log(nextProps);
 
     axios
       .post("/users/", data)

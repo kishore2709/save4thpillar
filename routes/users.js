@@ -136,15 +136,17 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { rating } = req.body;
+    let { rating } = req.body;
+
     console.log(rating);
+
     User.update(
       { _id: "5c94a614b2f72207c2c5c61d" },
       { $set: { rating: rating } },
       {},
       err => {
         const data = {
-          rating: rating
+          rating
         };
         res.json(data);
       }
