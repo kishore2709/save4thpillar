@@ -1,17 +1,34 @@
-import React from "react";
+import React, { Component } from "react";
+import StarRatingComponent from "react-star-rating-component";
 
-import "./Rating.css";
+class Rating extends Component {
+  constructor() {
+    super();
 
-const rating = () => {
-  return (
-    <div className="rating">
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-      <span>☆</span>
-    </div>
-  );
-};
+    this.state = {
+      rating: null
+    };
+  }
 
-export default rating;
+  onStarClick = (nextValue, prevValue, name) => {
+    this.setState({ rating: nextValue });
+  };
+
+  render() {
+    const { rating } = this.state;
+
+    return (
+      <div>
+        <StarRatingComponent
+          name="rate1"
+          starCount={5}
+          value={rating}
+          onStarClick={this.onStarClick}
+        />
+        <p>you rated: {rating}</p>
+      </div>
+    );
+  }
+}
+
+export default Rating;
