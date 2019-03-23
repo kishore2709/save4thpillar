@@ -10,11 +10,11 @@ class Rating extends Component {
     rating: null
   };
 
-  componentWillUpdate(nextProps) {
-    console.log(nextProps);
+  onStarClick = (nextValue, prevValue, name) => {
+    // this.setState({ rating: nextValue });
     const data = {
       id: "5c94a614b2f72207c2c5c61d",
-      rating: this.state.rating
+      rating: nextValue
     };
 
     axios
@@ -23,10 +23,6 @@ class Rating extends Component {
         console.log(res);
       })
       .catch(err => console.log(err));
-  }
-
-  onStarClick = (nextValue, prevValue, name) => {
-    this.setState({ rating: nextValue });
   };
 
   render() {
