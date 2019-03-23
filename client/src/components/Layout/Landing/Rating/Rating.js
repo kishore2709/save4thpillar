@@ -21,10 +21,18 @@ class Rating extends Component {
       <div>
         <StarRatingComponent
           name="rate1"
-          starCount={5}
+          starCount={10}
           value={rating}
           onStarClick={this.onStarClick}
+          emptyStarColor={"#ccc"}
+          starColor={"orange"}
+          renderStarIcon={() => (
+            <span style={{ fontSize: "24px" }}>
+              <i className="fas fa-star" />
+            </span>
+          )}
         />
+
         <p>you rated: {rating}</p>
       </div>
     );
