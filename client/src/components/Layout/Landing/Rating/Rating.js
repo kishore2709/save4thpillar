@@ -11,10 +11,14 @@ class Rating extends Component {
   };
 
   componentDidMount() {
-    const sessionData = sessionStorage.getItem("rating");
-    this.setState({
-      rating: sessionData
-    });
+    if (this.props.auth) {
+      const sessionData = sessionStorage.getItem("rating");
+      this.setState({
+        rating: sessionData
+      });
+    } else {
+      sessionStorage.removeItem("rating");
+    }
   }
 
   onStarClick = (nextValue, prevValue, name) => {
@@ -43,7 +47,7 @@ class Rating extends Component {
         <StarRatingComponent
           name="rate1"
           starCount={10}
-          value={this.state.rating}
+          value={+this.state.rating}
           onStarClick={this.onStarClick}
           emptyStarColor={"#ccc"}
           starColor={"orange"}
@@ -53,7 +57,6 @@ class Rating extends Component {
             </span>
           )}
         />
-
         <p
           style={{
             marginLeft: "10px",
