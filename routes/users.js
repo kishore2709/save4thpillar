@@ -131,4 +131,25 @@ router.get(
 //   res.redirect("/users/login");
 // });
 
+// Rating Handler
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { rating } = req.body;
+    console.log(rating);
+    User.update(
+      { _id: "5c94a614b2f72207c2c5c61d" },
+      { $set: { rating: rating } },
+      {},
+      err => {
+        const data = {
+          rating: rating
+        };
+        res.json(data);
+      }
+    );
+  }
+);
+
 module.exports = router;

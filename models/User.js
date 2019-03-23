@@ -17,6 +17,10 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  rating: {
+    type: Number,
+    default: 0
   }
 });
 
