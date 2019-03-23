@@ -16,8 +16,6 @@ class Rating extends Component {
       this.setState({
         rating: sessionData
       });
-    } else {
-      sessionStorage.removeItem("rating");
     }
   }
 
