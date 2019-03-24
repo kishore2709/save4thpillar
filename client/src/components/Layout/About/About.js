@@ -28,9 +28,9 @@ class About extends Component {
             >
               <div className="col-auto col-md-11 col-sm-11">
                 <p
-                  className="h4 text-left"
+                  className="h5 text-left"
                   style={{
-                    lineHeight: "1.408",
+                    lineHeight: "1.508",
                     fontWeight: "400"
                   }}
                 >
@@ -47,48 +47,60 @@ class About extends Component {
             </div>
           </div>
 
-          <div
-            className="row justify-content-around"
-            style={{ marginTop: "100px" }}
-          >
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-              <div className="row">
-                <div className="col-3 text-center">
-                  <i
-                    className="fa fa-users fa-3x text-danger "
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="col-9 col-sm-9 text-left ">
-                  <div className="row">
-                    <h4>Open to 7.7 Billion people </h4>
+          <div>
+            <div
+              style={{
+                marginTop: "100px",
+                marginBottom: "50px",
+                paddingLeft: "30px"
+              }}
+            >
+              <p className="h5 text-left" style={{ color: "#dc3545" }}>
+                Who can use save4thpillar.com
+              </p>
+            </div>
+            <div className="row justify-content-around">
+              <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+                <div className="row">
+                  <div className="col-3 text-center">
+                    <i
+                      className="fa fa-users fa-3x text-danger "
+                      aria-hidden="true"
+                    />
                   </div>
-                  <div className="row">
-                    <p>
-                      Open to everyone means anyone can come and vote. Becasue
-                      it is everyone's right. You can also express your opinion.
-                    </p>
+                  <div className="col-9 col-sm-9 text-left ">
+                    <div className="row">
+                      <h4>Open to 7.7 Billion people </h4>
+                    </div>
+                    <div className="row">
+                      <p>
+                        Open to everyone means anyone can come and vote. Becasue
+                        it is everyone's right. You can also express your
+                        opinion.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-              <div className="row">
-                <div className=" col-3 text-center">
-                  <i
-                    className="fa fa-balance-scale fa-3x text-danger "
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="col-lg-9 col-md-9 col-sm-9 text-left">
-                  <div className="row">
-                    <h4>Judiciary and Government</h4>
+              <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+                <div className="row">
+                  <div className=" col-3 text-center">
+                    <i
+                      className="fa fa-balance-scale fa-3x text-danger "
+                      aria-hidden="true"
+                    />
                   </div>
-                  <div className="row">
-                    <p>
-                      Open to everyone means anyone can come and vote. Becasue
-                      it is everyone's right. You can also express your opinion.
-                    </p>
+                  <div className="col-lg-9 col-md-9 col-sm-9 text-left">
+                    <div className="row">
+                      <h4>Judiciary and Government</h4>
+                    </div>
+                    <div className="row">
+                      <p>
+                        Open to everyone means anyone can come and vote. Becasue
+                        it is everyone's right. You can also express your
+                        opinion.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
