@@ -3,6 +3,7 @@ import { Route, NavLink, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
+import { clearCurrentRating } from "../../../actions/ratingActions";
 
 import {
   Collapse,
@@ -28,6 +29,7 @@ class AppNavbar extends Component {
   state = {
     isOpen: false
   };
+
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -36,7 +38,7 @@ class AppNavbar extends Component {
 
   onLogoutClick = e => {
     e.preventDefault();
-
+    this.props.clearCurrentRating();
     this.props.logoutUser();
   };
 
@@ -177,5 +179,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser }
+  { logoutUser, clearCurrentRating }
 )(AppNavbar);
