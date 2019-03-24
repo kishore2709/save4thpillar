@@ -9,29 +9,36 @@ import StarRatingComponent from "react-star-rating-component";
 class Rating extends Component {
   state = {
     rating: null,
-    id: null
+    id: null,
+    isAuthenticated: false
   };
 
   componentDidMount() {
     if (this.props.auth) {
       this.setState({
         id: this.props.auth.user.id,
-        rating: localStorage.getItem("rating")
+        rating: localStorage.getItem("rating"),
+        isAuthenticated: true
       });
     }
   }
 
   onStarClick = (nextValue, prevValue, name) => {
-    const ratingdata = {
-      id: this.props.auth.user.id,
-      rating: nextValue
-    };
+    if (this.state.isAuthenticated) {
+      this.setState({
+        rating: nextValue
+      });
+      // localStorage.setItem("rating", nextValue);
 
-    this.setState({
-      rating: nextValue
-    });
-    localStorage.setItem("rating", nextValue);
-    this.props.getCurrentRating(ratingdata);
+      const ratingdata = {
+        id: this.props.auth.user.id,
+        rating: nextValue
+      };
+
+      this.props.getCurrentRating(ratingdata);
+    } else {
+      console.log("what the hell");
+    }
   };
 
   render() {
@@ -52,15 +59,18 @@ class Rating extends Component {
             </span>
           )}
         />
-        <p
-          style={{
-            marginLeft: "10px",
-            marginTop: "-10px"
-          }}
-        >
-          you rated: {rating}
-        </p>
-        <p>{this.state.rating}</p>
+
+        {rating ? (
+          <p
+            style={{
+              marginLeft: "10px",
+              marginTop: "-10px"
+            }}
+          >
+            {" "}
+            you rated: {rating}
+          </p>
+        ) : null}
       </div>
     );
   }

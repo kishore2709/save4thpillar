@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
     case CLEAR_CURRENT_RATING:
       return {
         ...state,
-        rating: 0
+        rating: null
       };
 
     default:

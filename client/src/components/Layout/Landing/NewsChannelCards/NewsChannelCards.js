@@ -8,7 +8,7 @@ const newsChannelCards = () => {
     <div>
       <NewsChannelCard />
       <NewsChannelCard />
-      <NewsChannelCard />
+
       <div className="footer" style={{ marginTop: "700px" }}>
         Footer goes here
       </div>
