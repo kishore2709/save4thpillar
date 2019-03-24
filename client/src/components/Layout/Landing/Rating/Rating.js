@@ -22,14 +22,16 @@ class Rating extends Component {
   }
 
   onStarClick = (nextValue, prevValue, name) => {
-    const data = {
+    const ratingdata = {
+      id: this.props.auth.user.id,
       rating: nextValue
     };
+
     this.setState({
       rating: nextValue
     });
     localStorage.setItem("rating", nextValue);
-    this.props.getCurrentRating(data);
+    this.props.getCurrentRating(ratingdata);
   };
 
   render() {

@@ -3,10 +3,10 @@ import axios from "axios";
 import { GET_RATING, RATING_LOADING, CLEAR_CURRENT_RATING } from "./types";
 
 // GET CURRENT RATING
-export const getCurrentRating = () => dispatch => {
+export const getCurrentRating = ratingData => dispatch => {
   dispatch(setCurrentRating());
   axios
-    .post("/users/")
+    .post("/users/", ratingData)
     .then(res => {
       dispatch({
         type: GET_RATING,

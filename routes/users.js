@@ -101,7 +101,11 @@ router.post("/login", (req, res) => {
           keys.SecretOrKey,
           { expiresIn: 3600 },
           (err, token) => {
-            res.json({ success: true, token: "Bearer " + token });
+            res.json({
+              success: true,
+              token: "Bearer " + token,
+              rating: user.rating
+            });
           }
         );
       } else {
@@ -130,12 +134,11 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    let { rating } = req.body;
-    let { id } = req.body;
+    let { rating, id } = req.body;
 
     console.log(rating);
 
-    User.update({ _id: id }, { $set: { rating: rating } }, {}, err => {
+    User.updateOne({ _id: id }, { $set: { rating: rating } }, {}, err => {
       const data = {
         rating
       };
@@ -143,19 +146,5 @@ router.post(
     });
   }
 );
-
-// router.post(
-//   "/",
-//   passport.authenticate("jwt", { session: false }),
-//   (req, res) => {
-//     let { id } = req.body;
-
-//     User.findOne({ _id: id }).then(data => {
-//       if (data) {
-//         return res.json(data.rating);
-//       }
-//     });
-//   }
-// );
 
 module.exports = router;
