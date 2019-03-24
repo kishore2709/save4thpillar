@@ -53,15 +53,15 @@ class About extends Component {
           >
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
               <div className="row">
-                <div className="col-4">
+                <div className="col-3 text-center">
                   <i
-                    className="fa fa-users fa-4x text-danger "
+                    className="fa fa-users fa-3x text-danger "
                     aria-hidden="true"
                   />
                 </div>
-                <div className="col-8 col-sm-8 text-left ">
+                <div className="col-9 col-sm-9 text-left ">
                   <div className="row">
-                    <h4>Open to everyone</h4>
+                    <h4>Open to 7.7 Billion people </h4>
                   </div>
                   <div className="row">
                     <p>
@@ -74,15 +74,63 @@ class About extends Component {
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
               <div className="row">
-                <div className=" col-4">
+                <div className=" col-3 text-center">
                   <i
-                    className="fa fa-balance-scale fa-4x text-danger "
+                    className="fa fa-balance-scale fa-3x text-danger "
                     aria-hidden="true"
                   />
                 </div>
-                <div className="col-lg-8 col-md-8 col-sm-8 text-left">
+                <div className="col-lg-9 col-md-9 col-sm-9 text-left">
                   <div className="row">
-                    <h4>Government</h4>
+                    <h4>Judiciary and Government</h4>
+                  </div>
+                  <div className="row">
+                    <p>
+                      Open to everyone means anyone can come and vote. Becasue
+                      it is everyone's right. You can also express your opinion.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="row justify-content-around"
+            style={{ marginTop: "100px" }}
+          >
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+              <div className="row">
+                <div className="col-3 text-center">
+                  <i
+                    className="fa fa-newspaper-o fa-3x text-danger "
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="col-9 col-sm-9 text-left ">
+                  <div className="row">
+                    <h4>News Media</h4>
+                  </div>
+                  <div className="row">
+                    <p>
+                      Open to everyone means anyone can come and vote. Becasue
+                      it is everyone's right. You can also express your opinion.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
+              <div className="row">
+                <div className=" col-3 text-center">
+                  <i
+                    className="fa fa-building fa-3x text-danger "
+                    aria-hidden="true"
+                  />
+                </div>
+                <div className="col-lg-9 col-md-9 col-sm-9 text-left">
+                  <div className="row">
+                    <h4>Company / Organizations</h4>
                   </div>
                   <div className="row">
                     <p>
