@@ -30,7 +30,8 @@ class About extends Component {
                 <p
                   className="h4 text-left"
                   style={{
-                    lineHeight: "1.408"
+                    lineHeight: "1.408",
+                    fontWeight: "400"
                   }}
                 >
                   We, here at save4thpillar are group of people who are trying
