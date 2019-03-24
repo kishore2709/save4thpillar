@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, NavLink, Switch } from "react-router-dom";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
 import { clearCurrentRating } from "../../../actions/ratingActions";
@@ -46,14 +46,18 @@ class AppNavbar extends Component {
     const { isAuthenticated } = this.props.auth;
 
     const authLinks = (
-      <button
-        type="button"
-        onClick={this.onLogoutClick}
-        className="mr-3 btn btn-danger font-weight-bold"
-        style={{ textDecoration: "none" }}
-      >
-        Logout
-      </button>
+      <div>
+        <button
+          type="button"
+          onClick={this.onLogoutClick}
+          className="mr-3 btn btn-danger font-weight-bold"
+          style={{ textDecoration: "none", display: "inline-block" }}
+        >
+          Logout
+        </button>
+
+        <p style={{ display: "inline-block" }}>{this.props.auth.user.name}</p>
+      </div>
     );
 
     const guestLinks1 = (
@@ -168,10 +172,10 @@ class AppNavbar extends Component {
   }
 }
 
-Navbar.propTypes = {
-  logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-};
+// Navbar.propTypes = {
+//   logoutUser: PropTypes.func.isRequired,
+//    auth: PropTypes.object.isRequired
+// };
 
 const mapStateToProps = state => ({
   auth: state.auth

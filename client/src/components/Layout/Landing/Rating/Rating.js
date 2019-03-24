@@ -14,7 +14,7 @@ class Rating extends Component {
 
   componentDidMount() {
     if (this.props.auth) {
-      console.log(this.props.getCurrentRating());
+      this.props.getCurrentRating();
       this.setState({
         id: this.props.auth.user.id
       });
@@ -40,7 +40,7 @@ class Rating extends Component {
         this.setState({
           rating: res.data.rating
         });
-        localStorage.setItem("rating", res.data.rating);
+        // localStorage.setItem("rating", res.data.rating);
       })
       .catch(err => console.log(err));
   };
