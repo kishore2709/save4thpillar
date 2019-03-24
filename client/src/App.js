@@ -31,6 +31,10 @@ if (localStorage.jwtToken) {
     // Redirect to login
     window.location.href = "/login";
   }
+  const rating = localStorage.rating;
+  if (rating) {
+    localStorage.setItem("rating", rating);
+  }
 }
 
 class App extends Component {

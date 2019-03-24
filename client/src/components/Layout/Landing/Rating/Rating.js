@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentRating } from "../../../../actions/ratingActions";
@@ -14,35 +14,22 @@ class Rating extends Component {
 
   componentDidMount() {
     if (this.props.auth) {
-      this.props.getCurrentRating();
       this.setState({
-        id: this.props.auth.user.id
-      });
-      this.setState({
-        rating: this.state.rating
+        id: this.props.auth.user.id,
+        rating: localStorage.getItem("rating")
       });
     }
   }
 
   onStarClick = (nextValue, prevValue, name) => {
     const data = {
-      id: this.state.id,
       rating: nextValue
     };
     this.setState({
       rating: nextValue
     });
-
-    axios
-      .post("/users/", data)
-      .then(res => {
-        console.log(res);
-        this.setState({
-          rating: res.data.rating
-        });
-        // localStorage.setItem("rating", res.data.rating);
-      })
-      .catch(err => console.log(err));
+    localStorage.setItem("rating", nextValue);
+    this.props.getCurrentRating(data);
   };
 
   render() {

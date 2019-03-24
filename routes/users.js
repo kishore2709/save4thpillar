@@ -144,4 +144,18 @@ router.post(
   }
 );
 
+// router.post(
+//   "/",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     let { id } = req.body;
+
+//     User.findOne({ _id: id }).then(data => {
+//       if (data) {
+//         return res.json(data.rating);
+//       }
+//     });
+//   }
+// );
+
 module.exports = router;
