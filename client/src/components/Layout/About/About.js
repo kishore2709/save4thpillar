@@ -5,7 +5,7 @@ import "./About.css";
 class About extends Component {
   render() {
     return (
-      <div className="bg-light">
+      <div>
         <div className="background">
           <div className="transbox">
             <div>
@@ -74,9 +74,10 @@ class About extends Component {
                     </div>
                     <div className="row">
                       <p>
-                        Open to everyone means anyone can come and vote. Becasue
-                        it is everyone's right. You can also express your
-                        opinion.
+                        It is a open platform for everyone around the world. It
+                        let's you vote and share your opinion. It is a platform
+                        which is transparent, unbiased, no partiality to any
+                        religion, caste, color, region etc.
                       </p>
                     </div>
                   </div>
@@ -86,7 +87,7 @@ class About extends Component {
                 <div className="row">
                   <div className=" col-3 text-center">
                     <i
-                      className="fa fa-balance-scale fa-3x text-danger "
+                      className="fa fa-balance-scale fa-3x text-danger"
                       aria-hidden="true"
                     />
                   </div>
@@ -96,9 +97,10 @@ class About extends Component {
                     </div>
                     <div className="row">
                       <p>
-                        Open to everyone means anyone can come and vote. Becasue
-                        it is everyone's right. You can also express your
-                        opinion.
+                        Judiciary and Government is key to this platform because
+                        at the end these two systems has to take decisions. This
+                        platform lets these systems know, that how many people
+                        are thinking or supporting about something.
                       </p>
                     </div>
                   </div>
