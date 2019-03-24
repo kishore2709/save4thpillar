@@ -17,7 +17,7 @@ class Rating extends Component {
     if (this.props.auth) {
       this.setState({
         id: this.props.auth.user.id,
-        rating: localStorage.getItem("rating"),
+        rating: this.props.auth.user.rating,
         isAuthenticated: true
       });
     }
@@ -36,8 +36,6 @@ class Rating extends Component {
       };
 
       this.props.getCurrentRating(ratingdata);
-    } else {
-      console.log("what the hell");
     }
   };
 
