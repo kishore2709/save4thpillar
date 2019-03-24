@@ -26,3 +26,9 @@
     padding-top: 150px;
   }
 }
+
+.subhead {
+  font-size: 1.953125rem;
+  line-height: 1.408;
+  color: #363135;
+}
