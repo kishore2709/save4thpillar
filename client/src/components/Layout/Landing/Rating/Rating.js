@@ -12,9 +12,9 @@ class Rating extends Component {
 
   componentDidMount() {
     if (this.props.auth) {
-      const sessionData = sessionStorage.getItem("rating");
+      const localData = localStorage.getItem("rating");
       this.setState({
-        rating: sessionData
+        rating: localData
       });
     }
   }
@@ -32,7 +32,7 @@ class Rating extends Component {
         this.setState({
           rating: res.data.rating
         });
-        sessionStorage.setItem("rating", res.data.rating);
+        localStorage.setItem("rating", res.data.rating);
       })
       .catch(err => console.log(err));
   };
