@@ -4,7 +4,7 @@ import "./FakeNews.css";
 const fakeNews = () => {
   return (
     <div>
-      <div className="page-sidebar expandit text-left">
+      <div className="page-sidebar expandit text-left" id="sidenav">
         <div className="sidebar-inner" id="main-menu-wrapper">
           <ul className="wraplist mt-5 ml-3">
             <li>
@@ -68,12 +68,13 @@ const fakeNews = () => {
         </div>
       </div>
 
+      {/* Main Content for Fake-News */}
       <section id="main-content">
         <section className="wrapper main-wrapper row">
-          <div className="col-md-6">
+          <div className="col-md-6 col-sm-11 col-xs-12">
             <section className="box" />
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 col-sm-11 col-xs-12">
             <section className="box" />
           </div>
 
