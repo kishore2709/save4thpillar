@@ -103,7 +103,10 @@ class AppNavbar extends Component {
           style={{ lineHeight: "2.5rem" }}
         >
           <Container>
-            <NavbarBrand className="text-danger font-bold font-weight-bold brand" href="/" >
+            <NavbarBrand
+              className="text-danger font-bold font-weight-bold brand"
+              href="/"
+            >
               save4thpillar
             </NavbarBrand>
             {/* <NavLink to="/" style={{ textDecoration: "none" }} /> */}
