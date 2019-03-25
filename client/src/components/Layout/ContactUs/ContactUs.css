@@ -12,12 +12,13 @@
 .box-part:hover {
   background: #dc3545 !important;
   cursor: pointer;
+  color: #fff;
 }
 
 .box-part:hover .fa,
 .box-part:hover .title,
 .box-part:hover .text,
-.box-part:hover a {
+.box-part:hover i {
   color: #fff;
   -webkit-transition: all 1s ease-out;
   -moz-transition: all 1s ease-out;
@@ -31,4 +32,5 @@
 
 .fa1 {
   color: #4183d7;
+  /* color: #dc3545; */
 }
