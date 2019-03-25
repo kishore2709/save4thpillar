@@ -168,7 +168,7 @@ class About extends Component {
               </div>
             </div>
           </div>
-          <div style={{ marginTop: "80px" }}>
+          <div className="bg-light" style={{ marginTop: "100px" }}>
             <Team />
           </div>
           <p style={{ marginTop: "500px" }}>Footer goes here</p>

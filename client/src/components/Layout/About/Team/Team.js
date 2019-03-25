@@ -1,86 +1,85 @@
 import React from "react";
 
+import Faheem from "../../../../assets/about/faheem.png";
+import Saiful from "../../../../assets/about/saiful.jpeg";
+
 import "./Team.css";
 
 const team = () => {
   return (
     <div>
-      <section id="team" class="pb-5" id="teamdiv">
-        <div class="container">
-          <h5 class="section-title h1">OUR TEAM</h5>
-          <div class="row justify-content-around">
-            <div class="col-xs-12 col-sm-6 col-md-4">
+      <section id="team" className="pb-5">
+        <div className="container">
+          <h5 className="section-title h1">OUR TEAM</h5>
+          <div className="row justify-content-around">
+            <div className="col-xs-12 col-sm-6 col-md-4">
               <div
-                class="image-flip"
-                ontouchstart="this.classList.toggle('hover');"
+                className="image-flip"
+                onTouchStart="this.classNameList.toggle('hover');"
               >
-                <div class="mainflip">
-                  <div class="frontside">
-                    <div class="card">
-                      <div class="card-body text-center">
+                <div className="mainflip">
+                  <div className="frontside">
+                    <div className="card">
+                      <div className="card-body text-center">
                         <p>
                           <img
-                            class=" img-fluid"
-                            src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
+                            className=" img-fluid"
+                            src={Faheem}
                             alt="user-profile"
                           />
                         </p>
-                        <h4 class="card-title">Sunlimetech</h4>
-                        <p class="card-text">
-                          This is basic card with image on top, title,
-                          description and button.
-                        </p>
-                        <a href="/" class="btn btn-primary btn-sm">
-                          <i class="fa fa-plus" />
+                        <h4 className="card-title">Faheem</h4>
+                        <p className="card-text">He is a great Guy.</p>
+                        <a href="/" className="btn btn-danger btn-sm">
+                          <i className="fa fa-plus" />
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="backside">
-                    <div class="card">
-                      <div class="card-body text-center mt-4">
-                        <h4 class="card-title">Sunlimetech</h4>
-                        <p class="card-text">
-                          This is basic card with image on top, title,
-                          description and button.This is basic card with image
-                          on top, title, description and button.This is basic
-                          card with image on top, title, description and button.
+                  <div className="backside">
+                    <div className="card">
+                      <div className="card-body text-center mt-4">
+                        <h4 className="card-title">Faheem</h4>
+                        <p className="card-text">
+                          He a Computer Science and Engineering Graduate. He is
+                          working at save4thpillar platform as a FullStack
+                          developer and architect.
                         </p>
-                        <ul class="list-inline">
-                          <li class="list-inline-item">
+                        <ul className="list-inline">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-facebook" />
+                              <i className="fa fa-facebook" />
                             </a>
                           </li>
-                          <li class="list-inline-item">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-twitter" />
+                              <i className="fa fa-twitter" />
                             </a>
                           </li>
-                          <li class="list-inline-item">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-skype" />
+                              <i className="fa fa-skype" />
                             </a>
                           </li>
-                          <li class="list-inline-item">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-google" />
+                              <i className="fa fa-google" />
                             </a>
                           </li>
                         </ul>
@@ -91,78 +90,74 @@ const team = () => {
               </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div className="col-xs-12 col-sm-6 col-md-4">
               <div
-                class="image-flip"
-                ontouchstart="this.classList.toggle('hover');"
+                className="image-flip"
+                onTouchStart="this.classNameList.toggle('hover');"
               >
-                <div class="mainflip">
-                  <div class="frontside">
-                    <div class="card">
-                      <div class="card-body text-center">
+                <div className="mainflip">
+                  <div className="frontside">
+                    <div className="card">
+                      <div className="card-body text-center">
                         <p>
                           <img
-                            class=" img-fluid"
-                            src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_02.png"
+                            className=" img-fluid"
+                            src={Saiful}
                             alt="user-profile"
                           />
                         </p>
-                        <h4 class="card-title">Sunlimetech</h4>
-                        <p class="card-text">
-                          This is basic card with image on top, title,
-                          description and button.
-                        </p>
-                        <a href="/" class="btn btn-primary btn-sm">
-                          <i class="fa fa-plus" />
+                        <h4 className="card-title">Saiful</h4>
+                        <p className="card-text">He is a Great guy.</p>
+                        <a href="/" className="btn btn-danger btn-sm">
+                          <i className="fa fa-plus" />
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div class="backside">
-                    <div class="card">
-                      <div class="card-body text-center mt-4">
-                        <h4 class="card-title">Sunlimetech</h4>
-                        <p class="card-text">
-                          This is basic card with image on top, title,
-                          description and button.This is basic card with image
-                          on top, title, description and button.This is basic
-                          card with image on top, title, description and button.
+                  <div className="backside">
+                    <div className="card">
+                      <div className="card-body text-center mt-4">
+                        <h4 className="card-title">Saiful</h4>
+                        <p className="card-text">
+                          He a Computer Science and Engineering Graduate. He is
+                          working at save4thpillar platform as a FullStack
+                          developer and architect.
                         </p>
-                        <ul class="list-inline">
-                          <li class="list-inline-item">
+                        <ul className="list-inline">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-facebook" />
+                              <i className="fa fa-facebook" />
                             </a>
                           </li>
-                          <li class="list-inline-item">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-twitter" />
+                              <i className="fa fa-twitter" />
                             </a>
                           </li>
-                          <li class="list-inline-item">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-skype" />
+                              <i className="fa fa-skype" />
                             </a>
                           </li>
-                          <li class="list-inline-item">
+                          <li className="list-inline-item">
                             <a
-                              class="social-icon text-xs-center"
+                              className="social-icon text-xs-center"
                               target="_blank"
                               href="/"
                             >
-                              <i class="fa fa-google" />
+                              <i className="fa fa-google" />
                             </a>
                           </li>
                         </ul>

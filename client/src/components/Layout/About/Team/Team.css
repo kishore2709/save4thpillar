@@ -1,13 +1,4 @@
-/* FontAwesome for working BootSnippet :> */
-
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-#teamdiv {
-  padding: 200px 0 200px 0;
-}
-
-#team {
-  background: #eee !important;
-}
 
 .btn-primary:hover,
 .btn-primary:focus {
