@@ -4,15 +4,15 @@
   position: fixed;
   padding: 0px;
   background-color: #ffffff;
-  margin-top: 60px;
-  overflow: hidden;
+  background-color: #eee;
+  margin-top: -48px;
+  /* overflow: hidden; */
   box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.2);
   -webkit-box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.2);
   -moz-box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.2);
   -o-box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.2);
   -ms-box-shadow: 0 0 10px 0 rgba(33, 33, 33, 0.2);
   min-height: 100%;
-  height: auto;
 }
 .page-sidebar.fixedscroll {
   position: fixed;
@@ -85,7 +85,7 @@
 }
 #main-menu-wrapper li a {
   display: block;
-  line-height: 42px;
+  line-height: 60px;
   min-height: 42px;
   height: auto;
   color: #424242;

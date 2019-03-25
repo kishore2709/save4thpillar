@@ -99,7 +99,8 @@ class AppNavbar extends Component {
         <Navbar
           expand="md"
           light
-          className="mb-5 bg-light"
+          className="mb-5 bg-light "
+          sticky="top"
           style={{ lineHeight: "2.5rem" }}
         >
           <Container>
@@ -109,7 +110,6 @@ class AppNavbar extends Component {
             >
               save4thpillar
             </NavbarBrand>
-            {/* <NavLink to="/" style={{ textDecoration: "none" }} /> */}
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
