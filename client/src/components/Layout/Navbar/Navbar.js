@@ -17,7 +17,7 @@ import {
 
 import Landing from "../Landing/Landing";
 import About from "../About/About";
-import TopList from "../TopList/TopList";
+import FakeNews from "../FakeNews/FakeNews";
 import ContactUs from "../ContactUs/ContactUs";
 import Search from "../Search/Search";
 import Login from "../../Auth/LogIn/LogIn";
@@ -103,11 +103,10 @@ class AppNavbar extends Component {
           style={{ lineHeight: "2.5rem" }}
         >
           <Container>
-            <NavLink to="/" style={{ textDecoration: "none" }}>
-              <NavbarBrand className="text-danger font-bold font-weight-bold brand ">
-                save4thpillar
-              </NavbarBrand>
-            </NavLink>
+            <NavbarBrand className="text-danger font-bold font-weight-bold brand" href="/" >
+              save4thpillar
+            </NavbarBrand>
+            {/* <NavLink to="/" style={{ textDecoration: "none" }} /> */}
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -124,12 +123,12 @@ class AppNavbar extends Component {
 
                 <NavItem className="mr-3">
                   <NavLink
-                    to="/top-list"
+                    to="/fake-news"
                     className="text-dark mr-3"
                     onClick={this.toggle}
                     style={{ textDecoration: "none" }}
                   >
-                    <span className="align-middle hoverp">Top List</span>
+                    <span className="align-middle hoverp">Fake News</span>
                   </NavLink>
                 </NavItem>
                 <NavItem className="mr-3">
@@ -162,7 +161,7 @@ class AppNavbar extends Component {
         </Navbar>
         <Switch>
           <Route path="/about" exact component={About} />
-          <Route path="/top-list" exact component={TopList} />
+          <Route path="/fake-news" exact component={FakeNews} />
           <Route path="/contact-us" exact component={ContactUs} />
           <Route path="/search" exact component={Search} />
           <Route path="/login" exact component={Login} />

@@ -1,6 +1,6 @@
 import React from "react";
 
-const topList = () => {
+const fakeNews = () => {
   return (
     <div className="container">
       <p className="h3 text-danger">
@@ -10,4 +10,4 @@ const topList = () => {
     </div>
   );
 };
-export default topList;
+export default fakeNews;
