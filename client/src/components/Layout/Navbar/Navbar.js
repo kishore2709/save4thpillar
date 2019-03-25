@@ -103,9 +103,11 @@ class AppNavbar extends Component {
           style={{ lineHeight: "2.5rem" }}
         >
           <Container>
-            <NavbarBrand className="text-danger text-bolder" href="/">
-              save4thpillar
-            </NavbarBrand>
+            <NavLink to="/" style={{ textDecoration: "none" }}>
+              <NavbarBrand className="text-danger font-bold font-weight-bold brand ">
+                save4thpillar
+              </NavbarBrand>
+            </NavLink>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>

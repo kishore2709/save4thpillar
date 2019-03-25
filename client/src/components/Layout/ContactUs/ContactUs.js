@@ -8,8 +8,8 @@ const contactUs = () => {
       <div className="box">
         <div className="container">
           <div className="row">
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div className="box-part text-center">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+              <div className="box-part text-center bg-light">
                 <i className="fa fa-envelope fa-3x fa1" aria-hidden="true" />
 
                 <div className="title">
@@ -22,8 +22,8 @@ const contactUs = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div className="box-part text-center">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div className="box-part text-center bg-light">
                 <i className="fa fa-twitter fa-3x fa1" aria-hidden="true" />
 
                 <div className="title">
@@ -36,8 +36,8 @@ const contactUs = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div className="box-part text-center">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div className="box-part text-center bg-light">
                 <i className="fa fa-facebook fa-3x fa1" aria-hidden="true" />
 
                 <div className="title">
@@ -50,8 +50,8 @@ const contactUs = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div className="box-part text-center">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div className="box-part text-center bg-light">
                 <i className="fa fa-linkedin fa-3x fa1" aria-hidden="true" />
 
                 <div className="title">
@@ -64,8 +64,8 @@ const contactUs = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div className="box-part text-center">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div className="box-part text-center bg-light">
                 <i className="fa fa-google-plus fa-3x fa1" aria-hidden="true" />
 
                 <div className="title">
@@ -78,8 +78,8 @@ const contactUs = () => {
               </div>
             </div>
 
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div className="box-part text-center">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+              <div className="box-part text-center bg-light">
                 <i className="fa fa-instagram fa-3x fa1" aria-hidden="true" />
 
                 <div className="title">
