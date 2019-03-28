@@ -17,9 +17,9 @@ const footer = () => {
                     class="img-fluid"
                   />
                 </a>
-                <p class="footer-info-text">
-                  Reference site about Lorem Ipsum, giving information on its
-                  origins, as well as a random Lipsum generator.
+                <p class="footer-info-text text-light">
+                  save4thpillar is the platform for everyone. For updates please
+                  Subscribe.
                 </p>
                 <div class="footer-social-link">
                   <h3>Follow us</h3>

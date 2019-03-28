@@ -53,7 +53,7 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
+      <div>
         <div className="container logindiv">
           <div className="login-form">
             <form noValidate onSubmit={this.registerHandler}>
