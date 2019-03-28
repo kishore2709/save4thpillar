@@ -1,126 +1,116 @@
 import React from "react";
 
 import "./Footer.css";
+import footerimage from "../../../assets/about/about.jpg";
 
 const footer = () => {
   return (
-    <div>
-      <footer id="dk-footer" class="dk-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-lg-4">
-              <div class="dk-footer-box-info">
-                <a href="index.html" class="footer-logo">
+    <div style={{ marginTop: "500px" }}>
+      <footer id="dk-footer" className="dk-footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 col-lg-4">
+              <div className="dk-footer-box-info">
+                <a href="/" className="footer-logo">
                   <img
-                    src="images/footer_logo.png"
+                    src={footerimage}
                     alt="footer_logo"
-                    class="img-fluid"
+                    className="img-fluid"
                   />
                 </a>
-                <p class="footer-info-text text-light">
+                <p className="footer-info-text">
                   save4thpillar is the platform for everyone. For updates please
                   Subscribe.
                 </p>
-                <div class="footer-social-link">
+                <div className="footer-social-link">
                   <h3>Follow us</h3>
                   <ul>
                     <li>
                       <a href="/">
-                        <i class="fa fa-facebook" />
+                        <i className="fa fa-facebook" />
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i class="fa fa-twitter" />
+                        <i className="fa fa-twitter" />
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i class="fa fa-google-plus" />
+                        <i className="fa fa-google-plus" />
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i class="fa fa-linkedin" />
+                        <i className="fa fa-linkedin" />
                       </a>
                     </li>
                     <li>
                       <a href="/">
-                        <i class="fa fa-instagram" />
+                        <i className="fa fa-instagram" />
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-
-              <div class="footer-awarad">
-                <img src="images/icon/best.png" alt="" />
-                <p>Best Design Company 2019</p>
-              </div>
             </div>
 
-            <div class="col-md-12 col-lg-8">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="contact-us">
-                    <div class="contact-icon">
-                      <i class="fa fa-map-o" aria-hidden="true" />
+            <div className="col-md-12 col-lg-8">
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="contact-us">
+                    <div className="contact-icon">
+                      <i className="fa fa-map-o" aria-hidden="true" />
                     </div>
 
-                    <div class="contact-info">
-                      <h3>Jaipur India</h3>
-                      <p>5353 Road Avenue</p>
+                    <div className="contact-info">
+                      <h3>save4thpillar Headquarter</h3>
+                      <p>New Delhi, India</p>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-md-6">
-                  <div class="contact-us contact-us-last">
-                    <div class="contact-icon">
+                <div className="col-md-6">
+                  <div className="contact-us contact-us-last">
+                    <div className="contact-icon">
                       <i
-                        class="fa fa-volume-control-phone"
+                        className="fa fa-volume-control-phone"
                         aria-hidden="true"
                       />
                     </div>
 
-                    <div class="contact-info">
-                      <h3>95 711 9 5353</h3>
+                    <div className="contact-info">
+                      <h3>8929997976</h3>
                       <p>Give us a call</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-12 col-lg-6">
-                  <div class="footer-widget footer-left-widget">
-                    <div class="section-heading">
+              <div className="row">
+                <div className="col-md-12 col-lg-6">
+                  <div className="footer-widget footer-left-widget">
+                    <div className="section-heading">
                       <h3>Useful Links</h3>
-                      <span class="animate-border border-black" />
+                      <span className="animate-border border-black" />
                     </div>
                     <ul>
                       <li>
                         <a href="/">About us</a>
                       </li>
                       <li>
-                        <a href="/">Services</a>
+                        <a href="/">Fake News</a>
                       </li>
                       <li>
-                        <a href="/">Projects</a>
-                      </li>
-                      <li>
-                        <a href="/">Our Team</a>
+                        <a href="/">Contact us</a>
                       </li>
                     </ul>
                     <ul>
                       <li>
-                        <a href="/">Contact us</a>
+                        <a href="/">Login</a>
                       </li>
                       <li>
-                        <a href="/">Blog</a>
-                      </li>
-                      <li>
-                        <a href="/">Testimonials</a>
+                        <a href="/">Register</a>
                       </li>
                       <li>
                         <a href="/">Faq</a>
@@ -129,26 +119,23 @@ const footer = () => {
                   </div>
                 </div>
 
-                <div class="col-md-12 col-lg-6">
-                  <div class="footer-widget">
-                    <div class="section-heading">
+                <div className="col-md-12 col-lg-6">
+                  <div className="footer-widget">
+                    <div className="section-heading">
                       <h3>Subscribe</h3>
-                      <span class="animate-border border-black" />
+                      <span className="animate-border border-black" />
                     </div>
-                    <p>
-                      Reference site about Lorem Ipsum, giving information on
-                      its origins, as well.
-                    </p>
+                    <p>Leave your email here to get the updates.</p>
                     <form action="#">
-                      <div class="form-row">
-                        <div class="col dk-footer-form">
+                      <div className="form-row">
+                        <div className="col dk-footer-form">
                           <input
                             type="email"
-                            class="form-control"
+                            className="form-control"
                             placeholder="Email Address"
                           />
                           <button type="submit">
-                            <i class="fa fa-send" />
+                            <i className="fa fa-send" />
                           </button>
                         </div>
                       </div>
@@ -160,15 +147,15 @@ const footer = () => {
           </div>
         </div>
 
-        <div class="copyright">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <span>Copyright © 2019, All Right Reserved Seobin</span>
+        <div className="copyright">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <span>Copyright © 2019, All Right Reserved save4thpillar</span>
               </div>
 
-              <div class="col-md-6">
-                <div class="copyright-menu">
+              <div className="col-md-6">
+                <div className="copyright-menu">
                   <ul>
                     <li>
                       <a href="/">Home</a>
@@ -189,13 +176,13 @@ const footer = () => {
           </div>
         </div>
 
-        <div id="back-to-top" class="back-to-top">
+        <div id="back-to-top" className="back-to-top">
           <button
-            class="btn btn-dark"
+            className="btn btn-dark"
             title="Back to Top"
             style={{ display: "block" }}
           >
-            <i class="fa fa-angle-up" />
+            <i className="fa fa-angle-up" />
           </button>
         </div>
       </footer>

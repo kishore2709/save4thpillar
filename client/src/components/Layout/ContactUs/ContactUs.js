@@ -175,8 +175,8 @@ const contactUs = () => {
                 </div>
 
                 <p>
-                  <i className="fa fa-map-marker" /> save4thpillar Headquarter,
-                  New Delhi, India
+                  <i className="fa fa-map-marker text-dark" /> save4thpillar
+                  Headquarter, New Delhi, India
                 </p>
                 <p>
                   <i className="fa fa-comment" />{" "}

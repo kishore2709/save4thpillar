@@ -14,10 +14,6 @@ class NewsChannelCards extends Component {
       <div>
         <NewsChannelCard />
         <NewsChannelCard1 />
-
-        <div className="footer" style={{ marginTop: "700px" }}>
-          Footer goes here
-        </div>
       </div>
     );
   }
