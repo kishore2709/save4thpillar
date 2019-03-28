@@ -1,21 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import "./NewsChannelCards.css";
 
 import NewsChannelCard from "./NewsChannelCard/NewsChannelCard";
 import NewsChannelCard1 from "./NewsChannelCard/NewsChannelCard1";
 
+class NewsChannelCards extends Component {
+  state = {
+    posts: []
+  };
 
-const newsChannelCards = () => {
-  return (
-    <div>
-      <NewsChannelCard />
-      <NewsChannelCard1 />
+  render() {
+    return (
+      <div>
+        <NewsChannelCard />
+        <NewsChannelCard1 />
 
-      <div className="footer" style={{ marginTop: "700px" }}>
-        Footer goes here
+        <div className="footer" style={{ marginTop: "700px" }}>
+          Footer goes here
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default newsChannelCards;
+    );
+  }
+}
+export default NewsChannelCards;
