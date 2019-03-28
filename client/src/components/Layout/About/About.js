@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Team from "./Team/Team";
-
+import Footer from "../Footer/Footer";
 import "./About.css";
 
 class About extends Component {
@@ -171,8 +171,8 @@ class About extends Component {
           <div className="bg-light" style={{ marginTop: "100px" }}>
             <Team />
           </div>
-          <p style={{ marginTop: "500px" }}>Footer goes here</p>
         </div>
+        <Footer style={{marginTop: "200px"}} />
       </div>
     );
   }

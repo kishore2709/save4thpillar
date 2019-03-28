@@ -5,6 +5,8 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registerUser } from "../../../actions/authActions";
 
+import Footer from "../../Layout/Footer/Footer";
+
 import "./Register.css";
 
 class Register extends Component {
@@ -144,6 +146,7 @@ class Register extends Component {
             </p>
           </div>
         </div>
+        <Footer style={{ marginTop: "500px" }} />
       </div>
     );
   }

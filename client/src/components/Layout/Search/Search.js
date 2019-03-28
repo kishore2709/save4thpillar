@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Search.css";
+import Footer from "../Footer/Footer";
 
 const search = () => {
   return (
@@ -31,6 +32,7 @@ const search = () => {
           </form>
         </div>
       </div>
+      <Footer style={{ marginTop: "200px" }} />
     </div>
   );
 };

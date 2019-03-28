@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./ContactUs.css";
-
+import Footer from "../Footer/Footer";
 const contactUs = () => {
   return (
     <div>
@@ -190,7 +190,7 @@ const contactUs = () => {
           </div>
         </div>
       </section>
-      <p style={{ marginTop: "500px" }}>Footer goes here</p>
+      <Footer style={{ marginTop: "200px" }} />
     </div>
   );
 };

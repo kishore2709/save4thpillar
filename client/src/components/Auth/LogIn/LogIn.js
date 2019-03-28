@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../../actions/authActions";
 
+import Footer from "../../Layout/Footer/Footer";
+
 import "./LogIn.css";
 
 class LogIn extends Component {
@@ -49,65 +51,68 @@ class LogIn extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container logindiv">
-        <div className="login-form">
-          <form noValidate onSubmit={this.loginHandler}>
-            <p className="h2 text-center" style={{ marginBottom: "30px" }}>
-              <i className="fa fa-sign-in" aria-hidden="true" />
-              &nbsp;&nbsp; Log in
-            </p>
-            <div className="form-group">
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Enter your email"
-                name="email"
-                value={this.state.email}
-                onChange={this.onChangeHandler}
-              />
-              {errors.email ? (
-                <p className="text-danger text-left"> {errors.email}</p>
-              ) : null}
-            </div>
-            <div className="form-group">
-              <input
-                type="password"
-                className="form-control"
-                placeholder="Enter your password"
-                name="password"
-                value={this.state.password}
-                onChange={this.onChangeHandler}
-              />
-              {errors.password || errors.passincorrect ? (
-                <p className="text-danger text-left">
-                  {" "}
-                  {errors.password} {errors.passincorrect}
-                </p>
-              ) : null}
-            </div>
-            <div className="form-group">
-              <button
-                type="submit"
-                className="btn btn-danger btn-block btnstyle"
-              >
-                Log in
-              </button>
-            </div>
+      <div>
+        <div className="container logindiv">
+          <div className="login-form">
+            <form noValidate onSubmit={this.loginHandler}>
+              <p className="h2 text-center" style={{ marginBottom: "30px" }}>
+                <i className="fa fa-sign-in" aria-hidden="true" />
+                &nbsp;&nbsp; Log in
+              </p>
+              <div className="form-group">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter your email"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.onChangeHandler}
+                />
+                {errors.email ? (
+                  <p className="text-danger text-left"> {errors.email}</p>
+                ) : null}
+              </div>
+              <div className="form-group">
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Enter your password"
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.onChangeHandler}
+                />
+                {errors.password || errors.passincorrect ? (
+                  <p className="text-danger text-left">
+                    {" "}
+                    {errors.password} {errors.passincorrect}
+                  </p>
+                ) : null}
+              </div>
+              <div className="form-group">
+                <button
+                  type="submit"
+                  className="btn btn-danger btn-block btnstyle"
+                >
+                  Log in
+                </button>
+              </div>
 
-            <div className="clearfix">
-              <label className="pull-left checkbox-inline">
-                <input type="checkbox" /> Remember me
-              </label>
-              <a href="/" className="pull-right">
-                Forgot Password?
-              </a>
-            </div>
-          </form>
-          <p className="text-center">
-            or &nbsp;
-            <NavLink to="/register">Create an Account</NavLink>
-          </p>
+              <div className="clearfix">
+                <label className="pull-left checkbox-inline">
+                  <input type="checkbox" /> Remember me
+                </label>
+                <a href="/" className="pull-right">
+                  Forgot Password?
+                </a>
+              </div>
+            </form>
+            <p className="text-center">
+              or &nbsp;
+              <NavLink to="/register">Create an Account</NavLink>
+            </p>
+          </div>
         </div>
+        <Footer style={{ marginTop: "500px" }} />
       </div>
     );
   }
