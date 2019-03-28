@@ -11,6 +11,7 @@ import {
 } from "reactstrap";
 
 import NewsChannelCards from "./NewsChannelCards/NewsChannelCards";
+import Footer from "../Footer/Footer";
 
 class Landing extends Component {
   state = {
@@ -68,6 +69,7 @@ class Landing extends Component {
             <TabPane tabId="3"> tab pane 3</TabPane>
           </TabContent>
         </Container>
+        <Footer />
       </div>
     );
   }
