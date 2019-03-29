@@ -13,7 +13,7 @@ const footer = () => {
     >
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-3 text-left">
+          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
             <p className="h6 text-uppercase pb-2">Company</p>
 
             <p> About</p>
@@ -22,14 +22,14 @@ const footer = () => {
             <p>Career</p>
             <p>Team</p>
           </div>
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-3 text-left">
+          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
             <p className="h6 text-uppercase pb-2">Support</p>
             <p> Help </p>
             <p> Guides</p>
             <p> Contact us</p>
             <p> privacy & Policies</p>
           </div>
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-3 text-left">
+          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
             <p className="h6 text-uppercase pb-2">Social</p>
             <p>
               <i className="fa fa-twitter fa-lg" />
@@ -44,7 +44,7 @@ const footer = () => {
               <i className="fa fa-linkedin fa-lg" />
             </p>
           </div>
-          <div className="col-lg-3 col-md-3 col-sm-6 col-xs-3 text-left">
+          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
             <p className="h6 text-uppercase pb-2">Featured</p>
             <p> Press</p>
             <p> News Channel</p>
