@@ -73,7 +73,7 @@ class AppNavbar extends Component {
         to="/login"
         className="text-dark mr-3"
         onClick={this.toggle}
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none", paddingTop: "10px" }}
       >
         <span className="align-middle hoverp">Log in</span>
       </NavLink>
@@ -84,7 +84,7 @@ class AppNavbar extends Component {
         to="/register"
         className="text-dark mr-3"
         onClick={this.toggle}
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none", paddingTop: "10px" }}
       >
         <span className="align-middle hoverp">Register</span>
       </NavLink>
@@ -107,7 +107,7 @@ class AppNavbar extends Component {
           expand="md"
           light
           className="mb-5 bg-light "
-          style={{ lineHeight: "2.5rem" }}
+          style={{ lineHeight: "1.8" }}
         >
           <Container>
             <NavbarBrand
@@ -119,41 +119,88 @@ class AppNavbar extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem className="pull-left mr-3">
+                <NavItem className="mr-3">
                   <NavLink
                     to="/about"
                     className=" text-dark mr-3 "
                     onClick={this.toggle}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", paddingTop: "10px" }}
                   >
                     <span className="align-middle hoverp">About</span>
                   </NavLink>
                 </NavItem>
 
-                <NavItem className="mr-3 bg-light">
+                <NavItem className="mr-3">
                   <NavLink
                     to="/fake-news"
                     className="text-dark mr-3"
                     onClick={this.toggle}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", paddingTop: "10px" }}
                   >
                     <ul>
                       <li className="hoverp">
                         <p style={{ marginTop: "2.3px" }}>Fake News &#9662;</p>
                         <ul class="dropdown">
                           <li>
-                            <a href="#!" className="hoverp">
-                              Laptops
+                            <a href="/">
+                              <span className="sidebar-icon">
+                                <i className="fa fa-home" />
+                              </span>{" "}
+                              <span className="menu-title">Home</span>
                             </a>
                           </li>
                           <li>
-                            <a href="#!" className="hoverp">
-                              Monitors
+                            <a href="/">
+                              <span className="sidebar-icon">
+                                <i className="fa fa-bullseye" />
+                              </span>{" "}
+                              <span className="menu-title">Trending</span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="/">
+                              <span className="sidebar-icon">
+                                <i className="fa fa-video" />
+                              </span>{" "}
+                              <span className="menu-title">Video </span>
                             </a>
                           </li>
                           <li>
-                            <a href="#!" className="hoverp">
-                              Printers
+                            <a href="/">
+                              <span className="sidebar-icon">
+                                <i className="fa fa-book" />
+                              </span>{" "}
+                              <span className="menu-title">Article</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/">
+                              <span className="sidebar-icon">
+                                <i className="fa fa-user" />
+                              </span>{" "}
+                              <span className="menu-title">you rated</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/">
+                              <span className="sidebar-icon">
+                                <i className="fa fa-question-circle" />
+                              </span>{" "}
+                              <span className="menu-title">help</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/">
+                              <span className="sidebar-icon">
+                                <i
+                                  className="fa fa-comments"
+                                  aria-hidden="true"
+                                />
+                              </span>{" "}
+                              <span className="menu-title">
+                                send us feedback
+                              </span>
                             </a>
                           </li>
                         </ul>
@@ -166,7 +213,7 @@ class AppNavbar extends Component {
                     to="contact-us"
                     className="text-dark mr-3"
                     onClick={this.toggle}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", paddingTop: "10px" }}
                   >
                     <span className="align-middle hoverp">Contact us</span>
                   </NavLink>
@@ -176,7 +223,7 @@ class AppNavbar extends Component {
                     to="/search"
                     className="text-dark mr-3"
                     onClick={this.toggle}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", paddingTop: "10px" }}
                   >
                     <i
                       className="fa fa-search align-middle hoverp searchicon"
