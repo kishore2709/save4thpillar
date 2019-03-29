@@ -139,7 +139,7 @@ class AppNavbar extends Component {
                   >
                     <ul>
                       <li className="hoverp">
-                        <p>Fake News &#9662;</p>
+                        <p style={{ marginTop: "2.3px" }}>Fake News &#9662;</p>
                         <ul class="dropdown">
                           <li>
                             <a href="#!" className="hoverp">
@@ -160,14 +160,6 @@ class AppNavbar extends Component {
                       </li>
                     </ul>
                   </NavLink>
-                  {/* <NavLink
-                    to="/fake-news"
-                    className="text-dark mr-3"
-                    onClick={this.toggle}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <span className="align-middle hoverp">Fake News</span>
-                  </NavLink> */}
                 </NavItem>
                 <NavItem className="mr-3">
                   <NavLink
