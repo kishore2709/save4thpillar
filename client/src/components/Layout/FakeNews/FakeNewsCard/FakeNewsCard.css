@@ -1,9 +1,9 @@
 #main-content {
-  margin-left: 260px;
+  margin-left: 0px;
   display: block;
 }
 #main-content.sidebar_shift {
-  margin-left: 60px;
+  margin-left: 0px;
   margin-right: 0px;
 }
 .main-wrapper {

@@ -1,35 +1,31 @@
 import React from "react";
 
 import "./FakeNewsCard.css";
+import "./FakeSection/FakeSection";
+import FakeSection from "./FakeSection/FakeSection";
 
 const fakeNewsCard = () => {
   return (
-    <div>
+    <div className="container">
       <section id="main-content">
         <section className="wrapper main-wrapper row">
           <div className="col-lg-4 col-md-6 col-sm-11 col-xs-12">
-            <section className="box">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda vitae optio alias!{" "}
-              </p>
-            </section>
+            <FakeSection />
           </div>
           <div className="col-lg-4 col-md-6 col-sm-11 col-xs-12">
-            <section className="box">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda vitae optio alias!{" "}
-              </p>
-            </section>
+            <FakeSection />
           </div>
           <div className="col-lg-4 col-md-6 col-sm-11 col-xs-12">
-            <section className="box">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Assumenda vitae optio alias!{" "}
-              </p>
-            </section>
+            <FakeSection />
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-11 col-xs-12">
+            <FakeSection />
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-11 col-xs-12">
+            <FakeSection />
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-11 col-xs-12">
+            <FakeSection />
           </div>
         </section>
       </section>

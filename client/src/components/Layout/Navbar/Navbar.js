@@ -27,13 +27,20 @@ import "./Navbar.css";
 
 class AppNavbar extends Component {
   state = {
-    isOpen: false
+    isOpen: false,
+    dropdownOpen: false
   };
 
   toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
+  };
+
+  toggleDropdown = () => {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
   };
 
   onLogoutClick = e => {
@@ -123,15 +130,44 @@ class AppNavbar extends Component {
                   </NavLink>
                 </NavItem>
 
-                <NavItem className="mr-3">
+                <NavItem className="mr-3 bg-light">
                   <NavLink
                     to="/fake-news"
                     className="text-dark mr-3"
                     onClick={this.toggle}
                     style={{ textDecoration: "none" }}
                   >
-                    <span className="align-middle hoverp">Fake News</span>
+                    <ul>
+                      <li className="hoverp">
+                        <p>Fake News &#9662;</p>
+                        <ul class="dropdown">
+                          <li>
+                            <a href="#!" className="hoverp">
+                              Laptops
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#!" className="hoverp">
+                              Monitors
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#!" className="hoverp">
+                              Printers
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
                   </NavLink>
+                  {/* <NavLink
+                    to="/fake-news"
+                    className="text-dark mr-3"
+                    onClick={this.toggle}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <span className="align-middle hoverp">Fake News</span>
+                  </NavLink> */}
                 </NavItem>
                 <NavItem className="mr-3">
                   <NavLink
