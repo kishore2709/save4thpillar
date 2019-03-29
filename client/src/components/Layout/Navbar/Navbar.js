@@ -100,7 +100,6 @@ class AppNavbar extends Component {
           expand="md"
           light
           className="mb-5 bg-light "
-          sticky="top"
           style={{ lineHeight: "2.5rem" }}
         >
           <Container>

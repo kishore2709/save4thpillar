@@ -5,7 +5,7 @@ import "./Footer.css";
 const footer = () => {
   return (
     <div
-      className="bg-dark text-light"
+      className="bg-light"
       style={{
         marginTop: "500px",
         paddingTop: "40px"
