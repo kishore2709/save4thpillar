@@ -1,11 +1,13 @@
 import React from "react";
 
+import FakeNewsCard from "./FakeNewsCard/FakeNewsCard";
+
 import "./FakeNews.css";
 
 const fakeNews = () => {
   return (
     <div>
-      <div className="page-sidebar expandit text-left" id="sidenav">
+      {/* <div className="page-sidebar expandit text-left" id="sidenav">
         <div className="sidebar-inner" id="main-menu-wrapper">
           <ul className="wraplist mt-5 ml-3">
             <li>
@@ -67,25 +69,10 @@ const fakeNews = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Content for Fake-News */}
-      <section id="main-content">
-        <section className="wrapper main-wrapper row">
-          <div className="col-md-6 col-sm-11 col-xs-12">
-            <section className="box" />
-          </div>
-          <div className="col-md-6 col-sm-11 col-xs-12">
-            <section className="box" />
-          </div>
-
-          <div className="clearfix" />
-
-          <div className="col-md-12">
-            <section className="box" />
-          </div>
-        </section>
-      </section>
+      <FakeNewsCard />
     </div>
   );
 };

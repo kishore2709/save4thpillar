@@ -150,7 +150,7 @@ const footer = () => {
               className="text-dark"
               style={{ textDecoration: "none" }}
             >
-              <p className="hoverFooter"> Magzine</p>
+              <p className="hoverFooter"> Magazine</p>
             </a>
             <a
               href="/"

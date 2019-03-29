@@ -112,10 +112,10 @@ class AppNavbar extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem className="mr-3">
+                <NavItem className="pull-left mr-3">
                   <NavLink
                     to="/about"
-                    className="text-dark mr-3 "
+                    className=" text-dark mr-3 "
                     onClick={this.toggle}
                     style={{ textDecoration: "none" }}
                   >
