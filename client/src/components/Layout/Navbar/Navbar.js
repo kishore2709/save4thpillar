@@ -142,64 +142,39 @@ class AppNavbar extends Component {
                         <p style={{ marginTop: "2.3px" }}>Fake News &#9662;</p>
                         <ul class="dropdown">
                           <li>
-                            <a href="/">
-                              <span className="sidebar-icon">
-                                <i className="fa fa-home" />
-                              </span>{" "}
-                              <span className="menu-title">Home</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/">
-                              <span className="sidebar-icon">
-                                <i className="fa fa-bullseye" />
-                              </span>{" "}
-                              <span className="menu-title">Trending</span>
+                            <a href="/" style={{ textDecoration: "none" }}>
+                              <span className="menu-title hoverp text-dark">
+                                Trending
+                              </span>
                             </a>
                           </li>
 
                           <li>
-                            <a href="/">
-                              <span className="sidebar-icon">
-                                <i className="fa fa-video" />
-                              </span>{" "}
-                              <span className="menu-title">Video </span>
+                            <a href="/" style={{ textDecoration: "none" }}>
+                              <span className="menu-title hoverp text-dark">
+                                Video
+                              </span>
                             </a>
                           </li>
                           <li>
-                            <a href="/">
-                              <span className="sidebar-icon">
-                                <i className="fa fa-book" />
-                              </span>{" "}
-                              <span className="menu-title">Article</span>
+                            <a href="/" style={{ textDecoration: "none" }}>
+                              <span className="menu-title hoverp text-dark">
+                                Article
+                              </span>
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="/" style={{ textDecoration: "none" }}>
+                              <span className="menu-title hoverp text-dark">
+                                Help
+                              </span>
                             </a>
                           </li>
                           <li>
-                            <a href="/">
-                              <span className="sidebar-icon">
-                                <i className="fa fa-user" />
-                              </span>{" "}
-                              <span className="menu-title">you rated</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/">
-                              <span className="sidebar-icon">
-                                <i className="fa fa-question-circle" />
-                              </span>{" "}
-                              <span className="menu-title">help</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="/">
-                              <span className="sidebar-icon">
-                                <i
-                                  className="fa fa-comments"
-                                  aria-hidden="true"
-                                />
-                              </span>{" "}
-                              <span className="menu-title">
-                                send us feedback
+                            <a href="/" style={{ textDecoration: "none" }}>
+                              <span className="menu-title hoverp text-dark">
+                                Feedback
                               </span>
                             </a>
                           </li>
