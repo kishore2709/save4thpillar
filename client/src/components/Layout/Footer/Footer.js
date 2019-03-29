@@ -14,7 +14,9 @@ const footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
-            <p className="h6 text-uppercase pb-2">Useful Links</p>
+            <p className="h6 text-uppercase pb-2 font-weight-bold">
+              Useful Links
+            </p>
             <a
               href="/"
               className="text-dark"
@@ -46,7 +48,7 @@ const footer = () => {
             </a>
           </div>
           <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
-            <p className="h6 text-uppercase pb-2">Support</p>
+            <p className="h6 text-uppercase pb-2 font-weight-bold">Support</p>
 
             <a
               href="/"
@@ -81,7 +83,7 @@ const footer = () => {
             </a>
           </div>
           <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
-            <p className="h6 text-uppercase pb-2">Social</p>
+            <p className="h6 text-uppercase pb-2 font-weight-bold">Social</p>
 
             <a
               href="/"
@@ -128,11 +130,35 @@ const footer = () => {
             </a>
           </div>
           <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
-            <p className="h6 text-uppercase pb-2">Featured</p>
-            <p> Press</p>
-            <p> News Channel</p>
-            <p> Magzine</p>
-            <p> Blog & Posts</p>
+            <p className="h6 text-uppercase pb-2 font-weight-bold">Featured</p>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Press</p>
+            </a>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> News Channel</p>
+            </a>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Magzine</p>
+            </a>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter">Blog & Posts</p>
+            </a>
           </div>
         </div>
         <hr />
