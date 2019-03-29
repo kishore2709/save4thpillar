@@ -13,38 +13,121 @@ const footer = () => {
     >
       <div className="container">
         <div className="row">
-          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
-            <p className="h6 text-uppercase pb-2">Company</p>
+          <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
+            <p className="h6 text-uppercase pb-2">Useful Links</p>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> About</p>
+            </a>
 
-            <p> About</p>
-            <p> Fake News</p>
-
-            <p>Career</p>
-            <p>Team</p>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Fake News</p>
+            </a>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Career</p>
+            </a>
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Team</p>
+            </a>
           </div>
-          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
+          <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
             <p className="h6 text-uppercase pb-2">Support</p>
-            <p> Help </p>
-            <p> Guides</p>
-            <p> Contact us</p>
-            <p> privacy & Policies</p>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Help</p>
+            </a>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Guides</p>
+            </a>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Contact us</p>
+            </a>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter">Privacy & Policies</p>
+            </a>
           </div>
-          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
+          <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
             <p className="h6 text-uppercase pb-2">Social</p>
-            <p>
-              <i className="fa fa-twitter fa-lg" />
-            </p>
-            <p>
-              <i className="fa fa-facebook fa-lg" />
-            </p>
-            <p>
-              <i className="fa fa-envelope fa-lg" />
-            </p>
-            <p>
-              <i className="fa fa-linkedin fa-lg" />
-            </p>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter">
+                {" "}
+                <i className="fa fa-twitter fa-lg" />
+              </p>
+            </a>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter">
+                {" "}
+                <i className="fa fa-facebook fa-lg" />
+              </p>
+            </a>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter">
+                {" "}
+                <i className="fa fa-envelope fa-lg" />
+              </p>
+            </a>
+
+            <a
+              href="/"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter">
+                {" "}
+                <i className="fa fa-linkedin fa-lg" />
+              </p>
+            </a>
           </div>
-          <div className="col-auto col-md-3 col-sm-6 col-xs-6 text-left">
+          <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
             <p className="h6 text-uppercase pb-2">Featured</p>
             <p> Press</p>
             <p> News Channel</p>
@@ -55,8 +138,8 @@ const footer = () => {
         <hr />
         <div className="row">
           <div className="col text-center">
-            <footer class="page-footer font-small blue">
-              <div class="footer-copyright text-center mt-2 mb-3">
+            <footer className="page-footer font-small blue">
+              <div className="footer-copyright text-center mt-2 mb-3">
                 © 2019 Copyright:
                 <a href="https://www.save4thpillar.com"> save4thpillar.com</a>
               </div>

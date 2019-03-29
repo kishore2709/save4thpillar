@@ -7,7 +7,11 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 // Register user
 export const registerUser = (userdata, history) => dispatch => {
   axios
-    .post("/users/register", userdata)
+
+    .post(
+      "http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/rest-auth/registration/",
+      userdata
+    )
     .then(res => {
       history.push("/login");
     })
@@ -18,7 +22,7 @@ export const registerUser = (userdata, history) => dispatch => {
       });
     });
 };
-
+// .post("/users/register", userdata)
 // Login - User get's Token
 export const loginUser = userData => dispatch => {
   axios
