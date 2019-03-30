@@ -25,8 +25,13 @@ export const registerUser = (userdata, history) => dispatch => {
 export const loginUser = userData => dispatch => {
   axios
     .post("/users/login/", userData)
+    // .post(
+    //   "http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/rest-auth/login/",
+    //   userData
+    // )
     .then(res => {
       // Get Token from response
+      console.log(res);
       const { token, rating } = res.data;
 
       // Set the Token to LocalStorage

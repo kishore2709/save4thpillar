@@ -22,13 +22,12 @@ class Rating extends Component {
       });
     }
   }
-
   onStarClick = (nextValue, prevValue, name) => {
     if (this.state.isAuthenticated) {
       this.setState({
         rating: nextValue
       });
-      // localStorage.setItem("rating", nextValue);
+      localStorage.setItem("rating", nextValue);
 
       const ratingdata = {
         id: this.props.auth.user.id,
