@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../../actions/authActions";
@@ -131,4 +131,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { loginUser }
-)(withRouter(LogIn));
+)(LogIn);

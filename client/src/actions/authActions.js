@@ -8,10 +8,7 @@ import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 export const registerUser = (userdata, history) => dispatch => {
   axios
 
-    .post(
-      "http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/rest-auth/registration/",
-      userdata
-    )
+    .post("/users/register", userdata)
     .then(res => {
       history.push("/login");
     })
@@ -22,11 +19,12 @@ export const registerUser = (userdata, history) => dispatch => {
       });
     });
 };
+
 // .post("/users/register", userdata)
 // Login - User get's Token
 export const loginUser = userData => dispatch => {
   axios
-    .post("/users/login", userData)
+    .post("/users/login/", userData)
     .then(res => {
       // Get Token from response
       const { token, rating } = res.data;

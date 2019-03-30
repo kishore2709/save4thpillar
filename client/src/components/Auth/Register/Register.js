@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { registerUser } from "../../../actions/authActions";
@@ -166,4 +166,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { registerUser }
-)(withRouter(Register));
+)(Register);

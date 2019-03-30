@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, NavLink, Switch, withRouter } from "react-router-dom";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
 import { clearCurrentRating } from "../../../actions/ratingActions";
@@ -45,8 +45,10 @@ class AppNavbar extends Component {
 
   onLogoutClick = e => {
     e.preventDefault();
+
     this.props.clearCurrentRating();
     this.props.logoutUser();
+    this.props.history.push("/login");
   };
 
   FakeNewsHandler = () => {
@@ -216,10 +218,10 @@ class AppNavbar extends Component {
           </Container>
         </Navbar>
         <Switch>
-          <Route path="/about" exact component={About} />
-          <Route path="/fake-news" exact component={FakeNews} />
-          <Route path="/contact-us" exact component={ContactUs} />
-          <Route path="/search" exact component={Search} />
+          <Route path="/about" exact component={withRouter(About)} />
+          <Route path="/fake-news" exact component={withRouter(FakeNews)} />
+          <Route path="/contact-us" exact component={withRouter(ContactUs)} />
+          <Route path="/search" exact component={withRouter(Search)} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <Route path="/" component={Landing} />
@@ -229,10 +231,10 @@ class AppNavbar extends Component {
   }
 }
 
-// Navbar.propTypes = {
-//   logoutUser: PropTypes.func.isRequired,
-//    auth: PropTypes.object.isRequired
-// };
+Navbar.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
 
 const mapStateToProps = state => ({
   auth: state.auth
