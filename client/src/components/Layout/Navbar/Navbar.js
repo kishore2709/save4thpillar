@@ -65,12 +65,18 @@ class AppNavbar extends Component {
           type="button"
           onClick={this.onLogoutClick}
           className="mr-3 btn btn-danger font-weight-bold"
-          style={{ textDecoration: "none", display: "inline-block" }}
+          style={{
+            textDecoration: "none",
+            display: "inline-block",
+            paddingTop: "10px"
+          }}
         >
           Logout
         </button>
 
-        <p style={{ display: "inline-block" }}>{this.props.auth.user.name}</p>
+        <p style={{ display: "inline-block", paddingTop: "12px" }}>
+          {this.props.auth.user.name}
+        </p>
       </div>
     );
 

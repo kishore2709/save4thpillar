@@ -9,6 +9,10 @@ export const registerUser = (userdata, history) => dispatch => {
   axios
 
     .post("/users/register", userdata)
+    // .post(
+    //   "http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/rest-auth/registration/",
+    //   userdata
+    // )
     .then(res => {
       history.push("/login");
     })
