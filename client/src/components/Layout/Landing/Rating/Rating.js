@@ -15,9 +15,10 @@ class Rating extends Component {
 
   componentDidMount() {
     if (this.props.auth) {
+      const currentRatingValue = localStorage.getItem("rating");
       this.setState({
         id: this.props.auth.user.id,
-        rating: this.props.auth.user.rating,
+        rating: currentRatingValue,
         isAuthenticated: true
       });
     }

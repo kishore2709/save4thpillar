@@ -12,6 +12,7 @@ export const getCurrentRating = ratingData => dispatch => {
         type: GET_RATING,
         payload: res.data
       });
+      localStorage.setItem("rating", ratingData.rating);
       console.log(res);
     })
     .catch(err =>
