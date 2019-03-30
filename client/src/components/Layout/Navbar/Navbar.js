@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, NavLink, Switch } from "react-router-dom";
+import { Route, NavLink, Switch, withRouter } from "react-router-dom";
 // import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
@@ -47,6 +47,11 @@ class AppNavbar extends Component {
     e.preventDefault();
     this.props.clearCurrentRating();
     this.props.logoutUser();
+  };
+
+  FakeNewsHandler = () => {
+    this.toggle();
+    this.props.history.push("/fake-news");
   };
 
   render() {
@@ -131,16 +136,15 @@ class AppNavbar extends Component {
                 </NavItem>
 
                 <NavItem className="mr-3">
-                  <NavLink
-                    to="/fake-news"
+                  <div
+                    onClick={this.FakeNewsHandler}
                     className="text-dark mr-3"
-                    onClick={this.toggle}
                     style={{ textDecoration: "none", paddingTop: "10px" }}
                   >
                     <ul>
                       <li className="hoverp">
                         <p style={{ marginTop: "2.3px" }}>Fake News &#9662;</p>
-                        <ul class="dropdown">
+                        <ul className="dropdown">
                           <li>
                             <a href="/" style={{ textDecoration: "none" }}>
                               <span className="menu-title hoverp text-dark">
@@ -181,7 +185,7 @@ class AppNavbar extends Component {
                         </ul>
                       </li>
                     </ul>
-                  </NavLink>
+                  </div>
                 </NavItem>
                 <NavItem className="mr-3">
                   <NavLink
@@ -234,7 +238,9 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(
-  mapStateToProps,
-  { logoutUser, clearCurrentRating }
-)(AppNavbar);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { logoutUser, clearCurrentRating }
+  )(AppNavbar)
+);
