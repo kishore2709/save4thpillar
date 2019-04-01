@@ -9,10 +9,6 @@ export const registerUser = (userdata, history) => dispatch => {
   axios
 
     .post("/users/register", userdata)
-    // .post(
-    //   "http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/rest-auth/registration/",
-    //   userdata
-    // )
     .then(res => {
       history.push("/login");
     })
@@ -28,11 +24,7 @@ export const registerUser = (userdata, history) => dispatch => {
 // Login - User get's Token
 export const loginUser = userData => dispatch => {
   axios
-    .post("/users/login/", userData)
-    // .post(
-    //   "http://ec2-13-233-199-251.ap-south-1.compute.amazonaws.com/rest-auth/login/",
-    //   userData
-    // )
+    .post("/users/login", userData)
     .then(res => {
       // Get Token from response
       console.log(res);
