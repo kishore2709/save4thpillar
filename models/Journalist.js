@@ -1,20 +1,24 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ChannelSchema = new Schema({
+const JournalistSchema = new Schema({
   name: {
     type: String,
     require: true
   },
   info: {
     type: String,
-    require: true
+    require: true,
+    workingIn: {
+      type: String,
+      require: true
+    }
   },
-  image: {
+  roleType: {
     type: String,
     require: true
   },
-  website: {
+  image: {
     type: String,
     require: true
   },
@@ -62,4 +66,4 @@ const ChannelSchema = new Schema({
   }
 });
 
-module.exports = Channel = mongoose.model("Channel", ChannelSchema);
+module.exports = Journalist = mongoose.model("Journalist", JournalistSchema);
