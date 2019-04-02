@@ -23,7 +23,7 @@ const ChannelSchema = new Schema({
     require: true,
     count: {
       userId: {
-        type: Schema.ObjId,
+        type: Schema.Types.ObjectId,
         require: true
       },
       voteCout: {
@@ -34,7 +34,7 @@ const ChannelSchema = new Schema({
   },
   review: {
     userId: {
-      id: Obj.id,
+      id: Schema.Types.ObjectId,
       require: true
     },
     text: {
