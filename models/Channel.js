@@ -4,28 +4,60 @@ const Schema = mongoose.Schema;
 const ChannelSchema = new Schema({
   name: {
     type: String,
-    required: true
+    require: true
   },
   info: {
     type: String,
-    required: true
+    require: true
+  },
+  image: {
+    type: String,
+    require: true
   },
   website: {
     type: String,
-    required: true
+    require: true
   },
   rating: {
     type: Number,
-    required: true,
+    require: true,
     count: {
       userId: {
         type: Schema.ObjId,
-        required: true
+        require: true
       },
       voteCout: {
         type: Number,
-        required: true
+        require: true
       }
+    }
+  },
+  review: {
+    userId: {
+      id: Obj.id,
+      require: true
+    },
+    text: {
+      type: String,
+      require: true
+    }
+  },
+  social: {
+    twitter: {
+      type: String,
+      require: true
+    },
+    facebook: {
+      type: String,
+      require: true
+    },
+    instagram: {
+      type: String,
+      require: true
+    },
+    linkedin: {
+      type: String,
+      require: true
     }
   }
 });
