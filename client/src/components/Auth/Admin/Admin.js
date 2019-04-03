@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { loginAdmin } from "../../../actions/authActions";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import Footer from "../../Layout/Footer/Footer";
-
 import "./Admin.css";
 
 class Admin extends Component {
@@ -109,4 +111,18 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+Admin.propTypes = {
+  loginAdmin: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { loginAdmin }
+)(Admin);
