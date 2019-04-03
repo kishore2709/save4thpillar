@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../../../actions/authActions";
+import { loginAdmin } from "../../../actions/authActions";
 
 import Footer from "../../Layout/Footer/Footer";
 
@@ -118,7 +118,7 @@ class Admin extends Component {
   }
 }
 Admin.propTypes = {
-  loginUser: PropTypes.func.isRequired,
+  loginAdmin: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
@@ -130,5 +130,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { loginUser }
+  { loginAdmin }
 )(Admin);

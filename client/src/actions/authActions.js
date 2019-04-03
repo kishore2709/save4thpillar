@@ -73,3 +73,36 @@ export const logoutUser = userData => dispatch => {
   //Set current user to {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
 };
+
+// .post("/admin/", admindata)
+// Login - Admin get's Token
+export const loginAdmin = adminData => dispatch => {
+  axios
+    .post("/admin/login", adminData)
+    .then(res => {
+      // Get Token from response
+      console.log(res);
+      const { token, rating } = res.data;
+
+      // Set the Token to LocalStorage
+      localStorage.setItem("jwtToken", token);
+
+      // Set the Token to LocalStorage
+      localStorage.setItem("rating", rating);
+
+      // Set tocken to Authorization Header
+      setAuthToken(token);
+
+      // Decode user from Token
+      const decoded = jwt_decode(token);
+
+      // set current user
+      dispatch(setCurrentUser(decoded));
+    })
+    .catch(err => {
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      });
+    });
+};
