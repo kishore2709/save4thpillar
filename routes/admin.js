@@ -8,6 +8,7 @@ const passport = require("passport");
 //Input Validation
 const validateRegisterInput = require("../validation/register");
 const validateLoginInput = require("../validation/login");
+const validateChannelInput = require("../validation/login");
 
 // user Model
 const Admin = require("../models/Admin");
@@ -112,12 +113,12 @@ router.post("/login", (req, res) => {
 
 // Channel Register
 router.post("/add-channel", (req, res) => {
-  // const { errors, isValid } = validateRegisterInput(req.body);
+  const { errors, isValid } = validateRegisterInput(req.body);
 
   // cheking validation
-  // if (!isValid) {
-  //   return res.status(400).json(errors);
-  // }
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
   const { name, info, website, twitter, facebook } = req.body;
 
