@@ -17,8 +17,7 @@ router.get("/", (req, res) => {
   res.send("Welcome to admin page");
 });
 
-// Admin Register
-router.post("/login", (req, res) => {
+router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   // cheking validation
@@ -47,7 +46,7 @@ router.post("/login", (req, res) => {
           if (err) throw err;
 
           // set pass to Hash
-          Admin.password = hash;
+          newAdmin.password = hash;
 
           // Lets save to DB
           newAdmin
@@ -61,4 +60,52 @@ router.post("/login", (req, res) => {
     }
   });
 });
+
+// Admin Login
+router.post("/login", (req, res) => {
+  const { errors, isValid } = validateLoginInput(req.body);
+
+  // cheking validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  const { email, password } = req.body;
+  console.log(req.body);
+
+  Admin.findOne({ email }).then(user => {
+    if (!user) {
+      errors.email = "user not found";
+      return res.status(404).json(errors);
+    }
+
+    bcrypt.compare(password, user.password).then(isMatch => {
+      if (isMatch) {
+        // User Matched now sign the payload with JWT token
+        const payload = {
+          id: user.id,
+          name: user.name,
+          email: user.email
+        };
+
+        // Signing the Token
+        jwt.sign(
+          payload,
+          keys.SecretOrKey,
+          { expiresIn: 3600 },
+          (err, token) => {
+            res.json({
+              success: true,
+              token: "Bearer " + token
+            });
+          }
+        );
+      } else {
+        errors.password = "Password incorrect";
+        return res.status(400).json(errors);
+      }
+    });
+  });
+});
+
 module.exports = router;
