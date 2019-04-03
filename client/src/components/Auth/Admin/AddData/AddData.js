@@ -1,16 +1,45 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
+import { connect } from "react-redux";
+import { registerChannel } from "../../../../actions/addData";
 import Footer from "../../../Layout/Footer/Footer";
 
 import "./AddData.css";
 
-class AddData extends Component {
+class AddChannel extends Component {
   state = {
     name: "",
-    email: "",
-    password: "",
-    password2: "",
-    errors: {}
+    info: "",
+    website: "",
+    twitter: "",
+    facebook: ""
+  };
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/");
+    }
+  }
+
+  registerHandler = e => {
+    e.preventDefault();
+
+    const channelData = {
+      name: this.state.name,
+      info: this.state.info,
+      website: this.state.website,
+      twitter: this.state.twitter,
+      facebook: this.state.facebook
+    };
+
+    this.props.registerChannel(channelData, this.props.history);
+  };
+
+  onChangeHandler = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
   };
 
   render() {
@@ -21,9 +50,9 @@ class AddData extends Component {
             <i className="fa fa-plus" aria-hidden="true" />
             &nbsp; Add New channel
           </h2>
-          <form>
+          <form noValidate onSubmit={this.registerHandler}>
             <div className="form-group row">
-              <label for="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
                 Name
               </label>
               <div className="col-sm-10">
@@ -32,11 +61,13 @@ class AddData extends Component {
                   className="form-control"
                   id="inputName3"
                   placeholder="Name"
+                  value={this.state.namel}
+                  onChange={this.onChangeHandler}
                 />
               </div>
             </div>
             <div className="form-group row">
-              <label for="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
                 info
               </label>
               <div className="col-sm-10">
@@ -44,32 +75,15 @@ class AddData extends Component {
                   className="form-control"
                   rows="5"
                   id="comment"
+                  value={this.state.info}
                   placeholder="please enter basic information here"
+                  onChange={this.onChangeHandler}
                 />
               </div>
             </div>
+
             <div className="form-group row">
-              <label for="inputName3" className="col-sm-2 col-form-label">
-                image
-              </label>
-              <div className="col-sm-10">
-                <div className="custom-file">
-                  <input
-                    type="file"
-                    className="custom-file-input"
-                    id="customFile"
-                  />
-                  <label
-                    className="custom-file-label text-left"
-                    for="customFile"
-                  >
-                    Choose file
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div className="form-group row">
-              <label for="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
                 website
               </label>
               <div className="col-sm-10">
@@ -77,13 +91,15 @@ class AddData extends Component {
                   type="name"
                   className="form-control"
                   id="inputName3"
+                  value={this.state.website}
                   placeholder="website"
+                  onChange={this.onChangeHandler}
                 />
               </div>
             </div>
 
             <div className="form-group row">
-              <label for="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
                 twitter page
               </label>
               <div className="col-sm-10">
@@ -91,12 +107,14 @@ class AddData extends Component {
                   type="name"
                   className="form-control"
                   id="inputName3"
+                  value={this.state.twitter}
                   placeholder="twitter page"
+                  onChange={this.onChangeHandler}
                 />
               </div>
             </div>
             <div className="form-group row">
-              <label for="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
                 facebook page
               </label>
               <div className="col-sm-10">
@@ -104,14 +122,18 @@ class AddData extends Component {
                   type="name"
                   className="form-control"
                   id="inputName3"
+                  value={this.state.facebook}
                   placeholder="facebook page"
+                  onChange={this.onChangeHandler}
                 />
               </div>
             </div>
 
             <div className="form-group row ">
               <div className="col-sm-10 pt-3">
-                <button className="btn btn-danger  mb-5">Add Now</button>
+                <button type="submit" className="btn btn-danger  mb-5">
+                  Add Now
+                </button>
               </div>
             </div>
           </form>
@@ -122,4 +144,17 @@ class AddData extends Component {
   }
 }
 
-export default AddData;
+AddChannel.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { registerChannel }
+)(AddChannel);

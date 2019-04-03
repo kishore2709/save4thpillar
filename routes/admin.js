@@ -11,12 +11,14 @@ const validateLoginInput = require("../validation/login");
 
 // user Model
 const Admin = require("../models/Admin");
+const Channel = require("../models/Channel");
 
 // Admin home page
 router.get("/", (req, res) => {
   res.send("Welcome to admin page");
 });
 
+// Admin Register
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -105,6 +107,43 @@ router.post("/login", (req, res) => {
         return res.status(400).json(errors);
       }
     });
+  });
+});
+
+// Channel Register
+router.post("/add-channel", (req, res) => {
+  // const { errors, isValid } = validateRegisterInput(req.body);
+
+  // cheking validation
+  // if (!isValid) {
+  //   return res.status(400).json(errors);
+  // }
+
+  const { name, info, website, twitter, facebook } = req.body;
+
+  // Validaation passed and next is to find the user
+  Channel.findOne({ name: name }).then(user => {
+    if (user) {
+      // user found in DB
+      errors.name = "channel is already registered";
+      res.json(errors);
+    } else {
+      const newChannel = new Channel({
+        name: name,
+        info: info,
+        website: website,
+        twitter: twitter,
+        facebook: facebook
+      });
+
+      // Lets save to DB
+      newChannel
+        .save()
+        .then(channel => {
+          res.json({ msg: "channel is now registered" });
+        })
+        .catch(err => console.log(err));
+    }
   });
 });
 
