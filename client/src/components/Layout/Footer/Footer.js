@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "./Footer.css";
 
@@ -7,7 +8,7 @@ const footer = () => {
     <div
       className="bg-light"
       style={{
-        marginTop: "500px",
+        marginTop: "200px",
         paddingTop: "40px"
       }}
     >
@@ -46,6 +47,13 @@ const footer = () => {
             >
               <p className="hoverFooter"> Team</p>
             </a>
+            <NavLink
+              to="/admin"
+              className="text-dark"
+              style={{ textDecoration: "none" }}
+            >
+              <p className="hoverFooter"> Admin Login</p>
+            </NavLink>
           </div>
           <div className="col-auto col-md-3 col-sm-6 col-6 text-left">
             <p className="h6 text-uppercase pb-2 font-weight-bold">Support</p>

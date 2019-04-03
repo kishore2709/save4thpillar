@@ -22,6 +22,7 @@ import ContactUs from "../ContactUs/ContactUs";
 import Search from "../Search/Search";
 import Login from "../../Auth/LogIn/LogIn";
 import Register from "../../Auth/Register/Register";
+import Admin from "../../Auth/Admin/Admin";
 
 import "./Navbar.css";
 
@@ -230,6 +231,7 @@ class AppNavbar extends Component {
           <Route path="/search" exact component={withRouter(Search)} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
+          <Route path="/admin" exact component={Admin} />
           <Route path="/" component={Landing} />
         </Switch>
       </div>

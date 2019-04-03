@@ -6,9 +6,9 @@ import { loginUser } from "../../../actions/authActions";
 
 import Footer from "../../Layout/Footer/Footer";
 
-import "./LogIn.css";
+import "./Admin.css";
 
-class LogIn extends Component {
+class Admin extends Component {
   state = {
     email: "",
     password: "",
@@ -57,7 +57,7 @@ class LogIn extends Component {
             <form noValidate onSubmit={this.loginHandler}>
               <p className="h2 text-center" style={{ marginBottom: "30px" }}>
                 <i className="fa fa-sign-in" aria-hidden="true" />
-                &nbsp;&nbsp; Log in
+                &nbsp;&nbsp; Admin Log in
               </p>
               <div className="form-group">
                 <input
@@ -117,7 +117,7 @@ class LogIn extends Component {
     );
   }
 }
-LogIn.propTypes = {
+Admin.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
@@ -131,4 +131,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { loginUser }
-)(LogIn);
+)(Admin);
