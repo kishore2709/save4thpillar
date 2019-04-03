@@ -8,7 +8,7 @@ const passport = require("passport");
 //Input Validation
 const validateRegisterInput = require("../validation/register");
 const validateLoginInput = require("../validation/login");
-const validateChannelInput = require("../validation/login");
+const validateChannelInput = require("../validation/channel");
 
 // user Model
 const Admin = require("../models/Admin");
@@ -113,7 +113,7 @@ router.post("/login", (req, res) => {
 
 // Channel Register
 router.post("/add-channel", (req, res) => {
-  const { errors, isValid } = validateRegisterInput(req.body);
+  const { errors, isValid } = validateChannelInput(req.body);
 
   // cheking validation
   if (!isValid) {

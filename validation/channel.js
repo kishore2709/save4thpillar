@@ -15,7 +15,7 @@ module.exports = function validateChannelInput(data) {
   }
 
   if (Validator.isEmpty(data.info)) {
-    errors.email = "info field is required";
+    errors.info = "info field is required";
   }
 
   if (Validator.isEmpty(data.website)) {
@@ -26,8 +26,8 @@ module.exports = function validateChannelInput(data) {
     errors.twitter = "twitter field is required";
   }
 
-  if (!Validator.isEmpty(data.facebook)) {
-    errors.facebook = "Passwords must match";
+  if (Validator.isEmpty(data.facebook)) {
+    errors.facebook = "facebook field is required";
   }
 
   return {
