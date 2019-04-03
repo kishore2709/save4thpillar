@@ -54,14 +54,6 @@ const JournalistSchema = new Schema({
     facebook: {
       type: String,
       require: true
-    },
-    instagram: {
-      type: String,
-      require: true
-    },
-    linkedin: {
-      type: String,
-      require: true
     }
   }
 });

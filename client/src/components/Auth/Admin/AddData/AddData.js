@@ -18,7 +18,8 @@ class AddData extends Component {
       <div>
         <div className="container bg-light">
           <h2 className="pt-3 pb-4">
-            Add New channels/Journalists/Reporters/Anchors
+            <i className="fa fa-plus" aria-hidden="true" />
+            &nbsp; Add New channel
           </h2>
           <form>
             <div className="form-group row">
@@ -31,6 +32,79 @@ class AddData extends Component {
                   className="form-control"
                   id="inputName3"
                   placeholder="Name"
+                />
+              </div>
+            </div>
+            <div className="form-group row">
+              <label for="inputName3" className="col-sm-2 col-form-label">
+                info
+              </label>
+              <div className="col-sm-10">
+                <textarea
+                  className="form-control"
+                  rows="5"
+                  id="comment"
+                  placeholder="please enter basic information here"
+                />
+              </div>
+            </div>
+            <div className="form-group row">
+              <label for="inputName3" className="col-sm-2 col-form-label">
+                image
+              </label>
+              <div className="col-sm-10">
+                <div className="custom-file">
+                  <input
+                    type="file"
+                    className="custom-file-input"
+                    id="customFile"
+                  />
+                  <label
+                    className="custom-file-label text-left"
+                    for="customFile"
+                  >
+                    Choose file
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="form-group row">
+              <label for="inputName3" className="col-sm-2 col-form-label">
+                website
+              </label>
+              <div className="col-sm-10">
+                <input
+                  type="name"
+                  className="form-control"
+                  id="inputName3"
+                  placeholder="website"
+                />
+              </div>
+            </div>
+
+            <div className="form-group row">
+              <label for="inputName3" className="col-sm-2 col-form-label">
+                twitter page
+              </label>
+              <div className="col-sm-10">
+                <input
+                  type="name"
+                  className="form-control"
+                  id="inputName3"
+                  placeholder="twitter page"
+                />
+              </div>
+            </div>
+            <div className="form-group row">
+              <label for="inputName3" className="col-sm-2 col-form-label">
+                facebook page
+              </label>
+              <div className="col-sm-10">
+                <input
+                  type="name"
+                  className="form-control"
+                  id="inputName3"
+                  placeholder="facebook page"
                 />
               </div>
             </div>
