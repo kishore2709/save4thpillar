@@ -23,6 +23,7 @@ import Search from "../Search/Search";
 import Login from "../../Auth/LogIn/LogIn";
 import Register from "../../Auth/Register/Register";
 import Admin from "../../Auth/Admin/Admin";
+import AddData from "../../Auth/Admin/AddData/AddData";
 
 import "./Navbar.css";
 
@@ -232,6 +233,7 @@ class AppNavbar extends Component {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <Route path="/admin" exact component={Admin} />
+          <Route path="/admin/add-data" exact component={AddData} />
           <Route path="/" component={Landing} />
         </Switch>
       </div>

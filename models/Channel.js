@@ -26,7 +26,7 @@ const ChannelSchema = new Schema({
         type: Schema.Types.ObjectId,
         require: true
       },
-      voteCout: {
+      voteCount: {
         type: Number,
         require: true
       }

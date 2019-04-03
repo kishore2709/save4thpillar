@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { loginAdmin } from "../../../actions/authActions";
 
 import Footer from "../../Layout/Footer/Footer";
 
@@ -14,12 +11,6 @@ class Admin extends Component {
     password: "",
     errors: {}
   };
-
-  componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/");
-    }
-  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
@@ -38,7 +29,7 @@ class Admin extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.loginUser(loginCredentials, this.props.history);
+    this.props.loginAdmin(loginCredentials, this.props.history);
   };
 
   onChangeHandler = event => {
@@ -117,18 +108,5 @@ class Admin extends Component {
     );
   }
 }
-Admin.propTypes = {
-  loginAdmin: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired
-};
 
-const mapStateToProps = state => ({
-  auth: state.auth,
-  errors: state.errors
-});
-
-export default connect(
-  mapStateToProps,
-  { loginAdmin }
-)(Admin);
+export default Admin;
