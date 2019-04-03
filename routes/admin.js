@@ -120,32 +120,35 @@ router.post("/add-channel", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  const { name, info, website, twitter, facebook } = req.body;
+  passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+      const { name, info, website, twitter, facebook } = req.body;
+      console.log(name, info, twitter, website, twitter, facebook);
 
-  // Validaation passed and next is to find the user
-  Channel.findOne({ name: name }).then(user => {
-    if (user) {
-      // user found in DB
-      errors.name = "channel is already registered";
-      res.json(errors);
-    } else {
-      const newChannel = new Channel({
-        name: name,
-        info: info,
-        website: website,
-        twitter: twitter,
-        facebook: facebook
+      Channel.findOne({ name: name }).then(channel => {
+        if (channel) {
+          // channel found in DB
+          errors.name = "Channel is already registered";
+          res.json(errors);
+        } else {
+          const newChannel = new Channel({
+            name: name,
+            info: info,
+            website: website,
+            twitter: twitter,
+            facebook: facebook
+          });
+
+          // Lets save to DB
+          newChannel
+            .save()
+            .then(channel => {
+              res.json({ msg: "channel is now registered and can see " });
+            })
+            .catch(err => console.log(err));
+        }
       });
-
-      // Lets save to DB
-      newChannel
-        .save()
-        .then(channel => {
-          res.json({ msg: "channel is now registered" });
-        })
-        .catch(err => console.log(err));
-    }
-  });
+    };
 });
 
 module.exports = router;
