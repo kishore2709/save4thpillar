@@ -130,7 +130,7 @@ router.post(
       if (channel) {
         // channel found in DB
         errors.name = "Channel is already registered";
-        return res.json(errors);
+        return res.status(400).json(errors);
       } else {
         const newChannel = new Channel({
           name: name,

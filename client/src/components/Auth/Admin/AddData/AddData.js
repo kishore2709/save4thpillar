@@ -14,8 +14,24 @@ class AddChannel extends Component {
     website: "",
     twitter: "",
     facebook: "",
-    errors: {}
+    errors: {},
+    auth: false
   };
+
+  componentDidMount() {
+    if (this.props.auth) {
+      this.setState({
+        id: this.props.auth.user.id,
+        isAuthenticated: true
+      });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
 
   registerHandler = e => {
     e.preventDefault();
@@ -82,6 +98,9 @@ class AddChannel extends Component {
                   value={this.state.info}
                   onChange={this.onChangeHandler}
                 />
+                {errors.info ? (
+                  <p className="text-danger text-left"> {errors.info}</p>
+                ) : null}
               </div>
             </div>
 
@@ -98,6 +117,9 @@ class AddChannel extends Component {
                   placeholder="website"
                   onChange={this.onChangeHandler}
                 />
+                {errors.website ? (
+                  <p className="text-danger text-left"> {errors.website}</p>
+                ) : null}
               </div>
             </div>
 
@@ -114,6 +136,9 @@ class AddChannel extends Component {
                   placeholder="twitter page"
                   onChange={this.onChangeHandler}
                 />
+                {errors.twitter ? (
+                  <p className="text-danger text-left"> {errors.twitter}</p>
+                ) : null}
               </div>
             </div>
             <div className="form-group row">
@@ -129,6 +154,9 @@ class AddChannel extends Component {
                   placeholder="facebook page"
                   onChange={this.onChangeHandler}
                 />
+                {errors.facebook ? (
+                  <p className="text-danger text-left"> {errors.facebook}</p>
+                ) : null}
               </div>
             </div>
 
@@ -148,7 +176,7 @@ class AddChannel extends Component {
 }
 
 AddChannel.propTypes = {
-  registerUser: PropTypes.func.isRequired,
+  registerChannel: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
