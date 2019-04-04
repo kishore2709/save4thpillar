@@ -3,11 +3,12 @@ import axios from "axios";
 import { GET_ERRORS } from "./types";
 
 // Register user
-export const registerChannel = channeldata => dispatch => {
+export const registerChannel = (channeldata, history) => dispatch => {
   axios
     .post("/admin/add-channel", channeldata)
     .then(res => {
       console.log(res);
+      history.push("/");
     })
     .catch(err => {
       dispatch({
