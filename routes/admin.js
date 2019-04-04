@@ -35,7 +35,7 @@ router.post("/register", (req, res) => {
     if (user) {
       // user found in DB
       errors.email = "Email is already registered";
-      res.json(errors);
+      res.send(errors);
     } else {
       const newAdmin = new Admin({
         name: name,
@@ -130,8 +130,7 @@ router.post(
       if (channel) {
         // channel found in DB
         errors.name = "Channel is already registered";
-        res.json(errors);
-        console.log("inside find one");
+        return res.json(errors);
       } else {
         const newChannel = new Channel({
           name: name,

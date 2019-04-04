@@ -13,7 +13,8 @@ class AddChannel extends Component {
     info: "",
     website: "",
     twitter: "",
-    facebook: ""
+    facebook: "",
+    errors: {}
   };
 
   registerHandler = e => {
@@ -37,6 +38,8 @@ class AddChannel extends Component {
   };
 
   render() {
+    const { errors } = this.state;
+
     return (
       <div>
         <div className="container bg-light">
@@ -59,6 +62,9 @@ class AddChannel extends Component {
                   value={this.state.name}
                   onChange={this.onChangeHandler}
                 />
+                {errors.name ? (
+                  <p className="text-danger text-left"> {errors.name}</p>
+                ) : null}
               </div>
             </div>
 
@@ -148,7 +154,8 @@ AddChannel.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  errors: state.errors
 });
 
 export default connect(
