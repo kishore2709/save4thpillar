@@ -16,12 +16,6 @@ class AddChannel extends Component {
     facebook: ""
   };
 
-  componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/");
-    }
-  }
-
   registerHandler = e => {
     e.preventDefault();
 
@@ -58,39 +52,42 @@ class AddChannel extends Component {
               <div className="col-sm-10">
                 <input
                   type="name"
+                  name="name"
                   className="form-control"
                   id="inputName3"
                   placeholder="Name"
-                  value={this.state.namel}
-                  onChange={this.onChangeHandler}
-                />
-              </div>
-            </div>
-            <div className="form-group row">
-              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
-                info
-              </label>
-              <div className="col-sm-10">
-                <textarea
-                  className="form-control"
-                  rows="5"
-                  id="comment"
-                  value={this.state.info}
-                  placeholder="please enter basic information here"
+                  value={this.state.name}
                   onChange={this.onChangeHandler}
                 />
               </div>
             </div>
 
             <div className="form-group row">
-              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName4" className="col-sm-2 col-form-label">
+                info
+              </label>
+              <div className="col-sm-10">
+                <textarea
+                  name="info"
+                  className="form-control"
+                  placeholder="please enter basic information here"
+                  id="inputName4"
+                  rows="5"
+                  value={this.state.info}
+                  onChange={this.onChangeHandler}
+                />
+              </div>
+            </div>
+
+            <div className="form-group row">
+              <label htmlFor="inputName5" className="col-sm-2 col-form-label">
                 website
               </label>
               <div className="col-sm-10">
                 <input
-                  type="name"
+                  name="website"
                   className="form-control"
-                  id="inputName3"
+                  id="inputName5"
                   value={this.state.website}
                   placeholder="website"
                   onChange={this.onChangeHandler}
@@ -99,14 +96,14 @@ class AddChannel extends Component {
             </div>
 
             <div className="form-group row">
-              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName6" className="col-sm-2 col-form-label">
                 twitter page
               </label>
               <div className="col-sm-10">
                 <input
-                  type="name"
+                  name="twitter"
                   className="form-control"
-                  id="inputName3"
+                  id="inputName6"
                   value={this.state.twitter}
                   placeholder="twitter page"
                   onChange={this.onChangeHandler}
@@ -114,14 +111,14 @@ class AddChannel extends Component {
               </div>
             </div>
             <div className="form-group row">
-              <label htmlFor="inputName3" className="col-sm-2 col-form-label">
+              <label htmlFor="inputName7" className="col-sm-2 col-form-label">
                 facebook page
               </label>
               <div className="col-sm-10">
                 <input
-                  type="name"
+                  name="facebook"
                   className="form-control"
-                  id="inputName3"
+                  id="inputName7"
                   value={this.state.facebook}
                   placeholder="facebook page"
                   onChange={this.onChangeHandler}

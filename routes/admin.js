@@ -112,43 +112,45 @@ router.post("/login", (req, res) => {
 });
 
 // Channel Register
-router.post("/add-channel", (req, res) => {
-  const { errors, isValid } = validateChannelInput(req.body);
-
-  // cheking validation
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
-
+router.post(
+  "/add-channel",
   passport.authenticate("jwt", { session: false }),
-    (req, res) => {
-      const { name, info, website, twitter, facebook } = req.body;
-      console.log(name, info, twitter, website, twitter, facebook);
+  (req, res) => {
+    const { errors, isValid } = validateChannelInput(req.body);
 
-      Channel.findOne({ name: name }).then(channel => {
-        if (channel) {
-          // channel found in DB
-          errors.name = "Channel is already registered";
-          res.json(errors);
-        } else {
-          const newChannel = new Channel({
-            name: name,
-            info: info,
-            website: website,
-            twitter: twitter,
-            facebook: facebook
-          });
+    // cheking validation
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
 
-          // Lets save to DB
-          newChannel
-            .save()
-            .then(channel => {
-              res.json({ msg: "channel is now registered and can see " });
-            })
-            .catch(err => console.log(err));
-        }
-      });
-    };
-});
+    const { name, info, website, twitter, facebook } = req.body;
+    console.log(name, info, twitter, website, twitter, facebook);
+
+    Channel.findOne({ name: name }).then(channel => {
+      if (channel) {
+        // channel found in DB
+        errors.name = "Channel is already registered";
+        res.json(errors);
+        console.log("inside find one");
+      } else {
+        const newChannel = new Channel({
+          name: name,
+          info: info,
+          website: website,
+          twitter: twitter,
+          facebook: facebook
+        });
+
+        // Lets save to DB
+        newChannel
+          .save()
+          .then(channel => {
+            res.json({ msg: "channel is now registered and can see " });
+          })
+          .catch(err => console.log(err));
+      }
+    });
+  }
+);
 
 module.exports = router;
