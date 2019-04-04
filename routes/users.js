@@ -73,6 +73,7 @@ router.post("/login", (req, res) => {
 
   // cheking validation
   if (!isValid) {
+    console.log(errors);
     return res.status(400).json(errors);
   }
 
@@ -110,6 +111,7 @@ router.post("/login", (req, res) => {
         );
       } else {
         errors.password = "Password incorrect";
+        
         return res.status(400).json(errors);
       }
     });
