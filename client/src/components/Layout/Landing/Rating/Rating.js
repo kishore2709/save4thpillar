@@ -10,7 +10,7 @@ class Rating extends Component {
   state = {
     rating: null,
     id: null,
-    isAuthenticated: false
+    isAuthenticated: null
   };
 
   componentDidMount() {
@@ -24,7 +24,7 @@ class Rating extends Component {
     }
   }
   onStarClick = (nextValue, prevValue, name) => {
-    if (this.state.isAuthenticated) {
+    if (this.props.auth) {
       this.setState({
         rating: nextValue
       });
@@ -36,11 +36,26 @@ class Rating extends Component {
       };
 
       this.props.getCurrentRating(ratingdata);
+    } else {
+      this.props.history.push("/");
     }
   };
 
   render() {
     const { rating } = this.state;
+    const isAuthenticated = this.state.isAuthenticated;
+    let star;
+
+    if (isAuthenticated == null) {
+      star = null;
+    } else {
+      star = (
+        <p style={{ marginLeft: "10px", marginTop: "-10px" }}>
+          {" "}
+          you rated: {rating}
+        </p>
+      );
+    }
 
     return (
       <div>
@@ -52,23 +67,12 @@ class Rating extends Component {
           emptyStarColor={"#ccc"}
           starColor={"orange"}
           renderStarIcon={() => (
-            <span style={{ fontSize: "20px" }}>
+            <span style={{ fontSize: "25px" }}>
               <i className="fas fa-star" />
             </span>
           )}
         />
-
-        {rating ? (
-          <p
-            style={{
-              marginLeft: "10px",
-              marginTop: "-10px"
-            }}
-          >
-            {" "}
-            you rated: {rating}
-          </p>
-        ) : null}
+        {star}
       </div>
     );
   }
