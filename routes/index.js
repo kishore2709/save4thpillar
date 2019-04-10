@@ -4,7 +4,7 @@ const { ensureAuthenticated } = require("../config/auth");
 
 // Home page
 router.get("/", (req, res) => {
-    res.send("Welcome to home page! testing ");
+    res.send("Welcome to home page! testing ! testing 2 ");
 });
 
 // Dashboard
