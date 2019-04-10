@@ -25,19 +25,20 @@ const db = require("./config/keys").mongoURI;
 // DB connect
 // { useNewUrlParser: true } added so i can add '$' in my pass character
 mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => {
-    console.log("MongoDb conncected...");
-  })
-  .catch(err => {
-    console.log(err);
-  });
+    .connect(db, { useNewUrlParser: true })
+    .then(() => {
+        console.log("MongoDb conncected...");
+    })
+    .catch(err => {
+        console.log(err);
+    });
 
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
 app.use("/channels", require("./routes/channels"));
 app.use("/journalists", require("./routes/journalists"));
 app.use("/admin", require("./routes/admin"));
+app.use("/fakenews", require("./routes/fakenews"));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`server running at ${port}`));
