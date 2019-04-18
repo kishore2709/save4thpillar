@@ -33,7 +33,9 @@ class NewsChannelCards extends Component {
 
     render() {
         let channels = (
-            <p style={{ textAlign: "center" }}>Something went wrong!</p>
+            <h1 style={{ textAlign: "center", marginTop: "100px" }}>
+                Loading...please wait
+            </h1>
         );
         if (this.state.show) {
             channels = this.state.channels.map(channnel => {
