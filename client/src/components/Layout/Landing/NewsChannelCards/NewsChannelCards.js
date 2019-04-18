@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import "./NewsChannelCards.css";
 
 import NewsChannelCard from "./NewsChannelCard/NewsChannelCard";
-import NewsChannelCard1 from "./NewsChannelCard/NewsChannelCard1";
+
 import axios from "axios";
 
 class NewsChannelCards extends Component {
@@ -32,19 +32,30 @@ class NewsChannelCards extends Component {
     }
 
     render() {
+        let channels = (
+            <p style={{ textAlign: "center" }}>Something went wrong!</p>
+        );
         if (this.state.show) {
-            let NewsChannelCard = <NewsChannelCard />;
+            channels = this.state.channels.map(channnel => {
+                return (
+                    <NewsChannelCard
+                        key={channnel.id}
+                        name={channnel.name}
+                        info={channnel.info}
+                        website={channnel.website}
+                        twitter={channnel.twitter}
+                        facebook={channnel.facebook}
+                    />
+                );
+            });
         }
-
         return (
             <div>
-                <NewsChannelCard />
-                <NewsChannelCard1 />
+                <div>{channels}</div>
             </div>
         );
     }
 }
-
 // NewsChannelCards.propTypes = {
 //     getChannels: PropTypes.func.isRequired,
 //     getData: PropTypes.object.isRequired,
